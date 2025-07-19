@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Salman's Cube Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4799db, #7f00ff, #e100ff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .flex-row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .left-image {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .image {
+            background: white;
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .right-content {
+            background: rgb(25, 13, 198);
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            max-width: 400px;
+        }
+
+        fieldset {
+            border-radius: 15px;
+            border: none;
+        }
+
+        marquee {
+            font-size: 20px;
+            color: rgb(151, 202, 201);
+            margin-top: 20px;
+        }
+
+        details {
+            margin-top: 20px;
+        }
+
+        ul {
+            display: inline-block;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .large {
+            height: 32px;
+        }
+
+        .Yes {
+            background-color: rgb(9, 218, 23);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .Yes:hover {
+            background-color: rgb(5, 89, 30);
+        }
+
+        .No {
+            background-color: rgb(206, 42, 42);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .No:hover {
+            background-color: rgb(131, 12, 12);
+        }
+
+        .Submit {
+            background-color: rgb(255, 255, 1);
+            color: black;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .Submit:hover {
+            background-color: rgb(109, 98, 15);
+        }
+
+        .Simulator {
+            background-color: rgb(255, 124, 1);
+            color: white;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .Simulator:hover {
+            background-color: rgb(82, 39, 12);
+        }
+
+        .header-banner {
+            width: 100%;
+            height: 66px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 3px 3px #000;
+            border-bottom: 5px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .shadow {
+            box-shadow: 10px 9px #08060c;
+        }
+
+        img {
+            border: 3px solid white;
+            border-radius: 15px;
+            width: 300px;
+        }
+
+        img:hover {
+            box-shadow: 0 0 20px white;
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .button-container-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .cube-dropdown {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 2px solid #000000;
+            background-color: #f0f8ff;
+            color: #333;
+            box-shadow: 3px 3px 6px #555;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .cube-dropdown:hover {
+            background-color: #cde7ff;
+        }
+
+        /* Star Rating */
+        .rating-stars {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .rating-stars input {
+            display: none;
+        }
+
+        .rating-stars label {
+            color: gray;
+        }
+
+        .rating-stars input:checked~label,
+        .rating-stars label:hover,
+        .rating-stars label:hover~label {
+            color: gold;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-banner">
+        Salman's Cube Page
+    </div>
+
+    <div class="flex-row">
+        <div class="image shadow">
+            <div class="left-image">
+                <img src="images/gancube.webp" alt="GAN cube">
+                <p style="text-align:center; font-weight:bold;">GAN Cube</p>
+
+                <img src="images/rubiks.webp" alt="Rubik 3x3x3 cube">
+                <p style="text-align:center; font-weight:bold;">Original Rubik's Cube</p>
+
+                <img src="images/rubiks-cube.gif" alt="Normal 3x3x3 cube">
+                <p style="text-align:center; font-weight:bold;">Normal 3x3x3 cube</p>
+
+                <img src="images/cube.jpg" alt="Normal 3x3x3 cube">
+                <p style="text-align:center; font-weight:bold;">A 3x3x3 cube</p>
+            </div>
+        </div>
+
+        <div class="right-content shadow">
+            <fieldset>
+                <legend>About My Speedcubing</legend>
+                <p>My cube record is <strong>20 seconds</strong>! 🔥</p>
+                <a href="https://fr.wikipedia.org/wiki/Speedcubing" target="_blank" style="color: yellow;">
+                    Learn more about speedcubing
+                </a>
+            </fieldset>
+
+            <marquee>I can solve a cube in 30s! 😎😏</marquee>
+
+            <h4>Cool Rubik's Cube Facts</h4>
+            <ul>
+                <li>The world record is <strong>3.13 seconds!</strong></li>
+                <li>It was invented by Ernő Rubik in 1974.</li>
+            </ul>
+
+            <details>
+                <summary>Click on the triangle.</summary>
+                Try to do a new record😄!
+            </details>
+
+            <br>
+            <a href="https://cstimer.net/" target="_blank">
+                <button class="Simulator">🕹️ Try a Cube Simulator</button>
+            </a>
+            <h3>When did you learn cubing?</h3>
+            <input type="date" name="cubing-start">
+
+            <h3>Any cube tips to share?</h3>
+            <textarea rows="4" cols="30" placeholder="Write your tip here!"></textarea>
+
+            <h3>Pick your favorite cube color:</h3>
+            <input type="color" name="cube-color">
+
+            <h3>What's your average time between? 🤔</h3>
+            <label><input type="radio" name="Starter" value="Starter"> Starter: 1m-1m30s</label><br>
+            <label><input type="radio" name="advanced" value="advanced"> Advanced: 20s-45s</label><br>
+            <label><input type="radio" name="Expert" value="Expert"> Expert: 3s-20s</label>
+
+            <h3>Do you like playing with your cube? 🤨</h3>
+            <label><input type="checkbox"> Sure</label>
+            <label><input type="checkbox"> A bit</label>
+            <label><input type="checkbox"> No</label>
+
+            <h3>How difficult is solving a cube for you?</h3>
+            <select class="cube-dropdown">
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+                <option>Impossible 😵</option>
+            </select>
+
+            <h3>What's your cube goal time?</h3>
+            <input type="number" placeholder="(in seconds)">
+
+            <h3>Choose your favorite cube type: </h3>
+            <select class="cube-dropdown">
+                <option>2x2</option>
+                <option>3x3</option>
+                <option>4x4</option>
+                <option>Mirror Cube</option>
+                <option>Pyraminx</option>
+                <option>Megaminx</option>
+            </select>
+
+            <h5>Do you <em>like my web page?</em></h5>
+            <div class="button-container-row">
+                <button class="Yes" onclick="alert('✅ Thank you!')">Yes</button>
+                <button class="No" onclick="alert('❌ Error ❌')">No</button>
+            </div>
+
+            <br><br>
+            <form>
+                <div class="large">
+                    <input type="text" name="things" placeholder="Things to add." required style="height: 32px;">
+                    <button class="Submit" type="submit" onclick="alert('OK 👍')">Submit</button>
+                </div>
+            </form>
+
+            <h3>⭐ Rate My Cube Page!</h3>
+            <div class="rating-stars">
+                <input type="radio" name="stars" id="star5"><label for="star5">★</label>
+                <input type="radio" name="stars" id="star4"><label for="star4">★</label>
+                <input type="radio" name="stars" id="star3"><label for="star3">★</label>
+                <input type="radio" name="stars" id="star2"><label for="star2">★</label>
+                <input type="radio" name="stars" id="star1"><label for="star1">★</label>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+<footer>
+    <p>Made by <strong><a href="https://kidlabs.io/afa2328c1739488edb7f5efb9cd604a2/"
+                target="_blank">Salman</a></strong></p>
+    <p><em>v-1.0</em></p>
+</footer>
+
+</html>
