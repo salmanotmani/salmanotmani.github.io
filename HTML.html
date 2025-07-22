@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Salman's Cube Page</title>
+    <title>Salman's HTML Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #4799db, #7f00ff, #e100ff);
+            background: linear-gradient(to right, #c8c5d9, #e3f64d, #01010100);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -231,6 +231,7 @@
 
         footer {
             margin-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
@@ -238,97 +239,78 @@
 <body>
 
     <div class="header-banner">
-        Salman's Cube Page
+        Salman's HTML Page
     </div>
 
     <div class="flex-row">
         <div class="image shadow">
             <div class="left-image">
-                <img src="images/gancube.webp" alt="GAN cube">
-                <p style="text-align:center; font-weight:bold;">GAN Cube</p>
+                <img src="images/icone-html-orange.png" alt="GAN cube">
+                <p style="text-align:center; font-weight:bold;">HTML logo</p>
 
-                <img src="images/rubiks.webp" alt="Rubik 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">Original Rubik's Cube</p>
+                <img src="images/Introduction-to-HTML-2.jpg" alt="Rubik 3x3x3 cube">
+                <p style="text-align:center; font-weight:bold;">Introductions to html</p>
 
-                <img src="images/rubiks-cube.gif" alt="Normal 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">Normal 3x3x3 cube</p>
+                <img src="images/881415294f_50170557_code-html-sashkin-adobe-stock.jpg" alt="Normal 3x3x3 cube">
+                <p style="text-align:center; font-weight:bold;">Coding HTML</p>
 
-                <img src="images/cube.jpg" alt="Normal 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">A 3x3x3 cube</p>
+                <img src="images/hacker-desk-using-laptop-with-creative-coding-html-language-blurry-office-interior-background-web-developer-hacking-malware-programming-concept-double-exposure_670147-63706.avif" alt="Normal 3x3x3 cube">
+                <p style="text-align:center; font-weight:bold;">Devloping HTML</p>
             </div>
         </div>
 
         <div class="right-content shadow">
             <fieldset>
-                <legend>About My Speedcubing</legend>
-                <a href="https://fr.wikipedia.org/wiki/Speedcubing" target="_blank" style="color: yellow;">
-                    Learn more about speedcubing
+                <legend>About html</legend>
+                <a href="https://fr.wikipedia.org/wiki/HTML" target="_blank" style="color: yellow;">
+                    Learn more about HTML
                 </a>
             </fieldset>
 
-            <marquee>My cube record is <strong>20 seconds</strong>! 🔥 😎😏</marquee>
+            <marquee>this page is about HTML</marquee>
 
-            <h4>Cool Rubik's Cube Facts</h4>
+            <h4>HTML Facts</h4>
             <ul>
-                <li>The world record is <strong>3.13 seconds!</strong></li>
-                <li>It was invented by Ernő Rubik in 1974.</li>
+                <li>It was invented by Tim Berners-Lee.</li>
+                <li>HTML means Hypertext Markup Language</li>
             </ul>
-            
 
             <details>
                 <summary>Click on the triangle.</summary>
-                Try to do a new record😄!
+                Try to work everyday
             </details>
 
-            <br>
-            <a href="https://cstimer.net/" target="_blank">
-                <button class="Simulator">🕹️ Try a Cube Simulator</button>
-            </a>
-            <h3>When did you learn cubing?</h3>
-            <input type="date" name="cubing-start">
+            <h3>🌟 When did you first start learning HTML?</h3>
+            <input type="date" name="html-start-date">
 
-            <h3>Any cube tips to share?</h3>
-            <textarea rows="4" cols="30" placeholder="Write your tip here!"></textarea>
+            <h3>💡 What's your favorite thing about HTML?</h3>
+            <textarea rows="4" cols="30" placeholder="Write your favorite HTML feature!"></textarea>
 
-            <h3>Pick your favorite cube color:</h3>
-            <input type="color" name="cube-color">
+            <h3>📚 Which HTML tag do you like the most?</h3>
+            <select name="favorite-tag" class="cube-dropdown">
+                <option>&lt;p&gt; — Paragraph</option>
+                <option>&lt;img&gt; — Image</option>
+                <option>&lt;a&gt; — Link</option>
+                <option>&lt;h1&gt; — Heading</option>
+                <option>&lt;div&gt; — Container</option>
+            </select>
 
-            <h3>What's your average time between? 🤔</h3>
-            <label><input type="radio" name="Starter" value="Starter"> Starter: 1m-1m30s</label><br>
-            <label><input type="radio" name="advanced" value="advanced"> Advanced: 20s-45s</label><br>
-            <label><input type="radio" name="Expert" value="Expert"> Expert: 3s-20s</label>
-
-            <h3>Do you like playing with your cube? 🤨</h3>
-            <label><input type="checkbox"> Sure</label>
-            <label><input type="checkbox"> A bit</label>
-            <label><input type="checkbox"> No</label>
-
-            <h3>How difficult is solving a cube for you?</h3>
-            <select class="cube-dropdown">
+            <h3>🧩 How easy is HTML for you?</h3>
+            <select name="html-difficulty" class="cube-dropdown">
+                <option>Very Easy</option>
                 <option>Easy</option>
-                <option>Medium</option>
-                <option>Hard</option>
-                <option>Impossible 😵</option>
+                <option>Okay</option>
+                <option>Challenging</option>
+                <option>Still Learning!</option>
             </select>
-            <h3>🔢 How many cubes did you solve today?</h3>
-            <input type="number" min="0" placeholder="Type a number">
 
-            <h3>What's your cube goal time?</h3>
-            <input type="number" placeholder="(in seconds)">
+            <h3>🔢 How many HTML tags do you know?</h3>
+            <input type="number" min="0" name="known-tags" placeholder="Enter a number">
 
-            <h3>Choose your favorite cube type: </h3>
-            <select class="cube-dropdown">
-                <option>2x2</option>
-                <option>3x3</option>
-                <option>4x4</option>
-                <option>Mirror Cube</option>
-                <option>Pyraminx</option>
-                <option>Megaminx</option>
-            </select>
-            <h3>🌍 Cubing Around the World</h3>
-            <p>Check out <a href="https://www.worldcubeassociation.org/competitions" target="_blank"
-                    style="color: yellow;">WCA
-                    Competitions</a>!</p>
+            <h3>🚀 Want to learn more about HTML?</h3>
+            <p>Check out <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"
+                    style="color: blue;">MDN HTML Guide</a> to learn coding!</p>
+
 
 
             <h5>Do you <em>like my web page?</em></h5>
