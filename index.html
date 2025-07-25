@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #2310b6, #00ff04, #e5ff00, #cd501a );
+            background: linear-gradient(to right, #2310b6, #00ff04, #e5ff00, #cd501a);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -19,89 +19,37 @@
             text-shadow: 2px 2px 5px black;
         }
 
-        .cube {
-            background-color: #2310b6;
-            color: black;
-            padding: 20px 40px;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 2px 2px 6px #333;
-        }
-
-        .cube:hover {
-            background-color: rgb(66, 16, 123);
-        }
-
-        .PALESTINE {
-            background-color: #cd501a;
-            color: black;
-            padding: 20px 40px;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 2px 2px 6px #333;
-        }
-
-        .PALESTINE:hover {
-            background-color: rgb(143, 93, 19);
-        }
-
-        .WEB {
-            background-color: #c9bf50;
-            color: black;
-            padding: 20px 40px;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 2px 2px 6px #333;
-        }
-
-        .WEB:hover {
-            background-color: rgb(100, 99, 7);
-        }
-        .CSS {
-            background-color: #10de14;
-            color: black;
-            padding: 20px 40px;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 2px 2px 6px #333;
-        }
-
-        .CSS:hover {
-            background-color: rgb(47, 100, 7);
-        }
-
         .button-container-row {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 20px;
+            margin-top: 30px;
         }
 
+        .link-image {
+            border: 3px solid white;
+            border-radius: 15px;
+            width: 400px;  
+            height: 270px; 
+            object-fit: contain;  
+            background-color: white; 
+            transition: 0.3s;
+        }
+
+        .link-image:hover {
+            box-shadow: 0 0 20px white;
+            transform: scale(1.05);
+        }
 
         footer {
             margin-top: 40px;
-            color: white;
+            color: rgb(255, 255, 255);
             text-align: center;
         }
 
         footer a {
-            color: rgb(0, 0, 0);
+            color: rgb(9, 9, 9);
             text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -111,15 +59,37 @@
     <h1>Choose your content!</h1>
 
     <div class="button-container-row">
-        <a href="cube.html" class="cube">Cube Page</a>
-        <a href="CSS.html" class="CSS">CSS Page</a>
-        <a href="HTML.html" class="WEB">HTML Page</a>
-        <a href="palestine.html" class="PALESTINE">Palestine Page</a>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <a href="cube.html">
+                <img src="images/gancube.webp" alt="Rubik 3x3x3 cube" class="link-image">
+            </a>
+            <p style="text-align:center; font-weight:bold; color:white;">Cube Page</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <a href="CSS.html">
+                <img src="images/Introduction-To-CSS-1.jpg" alt="CSS icon" class="link-image">
+            </a>
+            <p style="text-align:center; font-weight:bold; color:white;">CSS Page</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <a href="HTML.html">
+                <img src="images/Introduction-to-HTML-2.jpg" alt="HTML icon" class="link-image">
+            </a>
+            <p style="text-align:center; font-weight:bold; color:white;">HTML Page</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <a href="palestine.html">
+                <img src="images/abc_871654_007.jpg" alt="Palestine flag" class="link-image">
+            </a>
+            <p style="text-align:center; font-weight:bold; color:white;">Palestine Page</p>
+        </div>
     </div>
 
     <footer>
-        <p>Made by <strong><a href="https://kidlabs.io/afa2328c1739488edb7f5efb9cd604a2/"
-                    target="_blank">Salman</a></strong></p>
+        <p>Made by <a href="https://github.com/salmanotmani" target="_blank">Salman</a></p>
     </footer>
 
 </body>
