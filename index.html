@@ -2,142 +2,182 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #2310b6, #00ff04, #e5ff00, #cd501a);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
+  <meta charset="UTF-8" />
+  <title>Home Page</title>
+  <style>
+    /* 🌈 Animated background using your page colors */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(-45deg,
+          #000000,    /* Space */
+          #7f00ff,    /* Cube */
+          #00bfff,    /* Sea */
+          #008000,    /* Palestine green */
+          #ff0000,    /* Palestine red */
+          #ff9900,    /* HTML */
+          #264de4,    /* CSS */
+          #000000     /* Space again */
+      );
+      background-size: 500% 500%;
+      animation: gradientFlow 20s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        h1 {
-            color: white;
-            text-shadow: 2px 2px 5px black;
-        }
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% 50%;
+      }
 
-        h1 {
-            color: white;
-            font-size: 48px;
-            animation: glow 2s infinite alternate;
-        }
+      50% {
+        background-position: 100% 50%;
+      }
 
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
-            }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-            to {
-                text-shadow: 0 0 20px #ff00c8, 0 0 40px #ff00c8;
-            }
-        }
+    .container {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 25px;
+      box-shadow: 0 0 30px #ffffff;
+      padding: 30px;
+      width: 90%;
+      max-width: 1300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .button-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            /* 3 images per row */
-            gap: 20px;
-            max-width: 1300px;
-            margin-top: 30px;
-        }
+    h1 {
+      color: white;
+      font-size: 48px;
+      animation: glow 2s infinite alternate;
+      text-align: center;
+    }
 
-        .button-grid>div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+      }
 
-        .link-image {
-            border: 3px solid white;
-            border-radius: 15px;
-            width: 400px;
-            height: 270px;
-            object-fit: contain;
-            background-color: white;
-            transition: 0.3s;
-        }
+      to {
+        text-shadow: 0 0 20px #ff00c8, 0 0 40px #ff00c8;
+      }
+    }
 
-        .link-image:hover {
-            box-shadow: 0 0 20px white;
-            transform: scale(1.05);
-        }
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+      width: 100%;
+    }
 
-        p {
-            text-align: center;
-            font-weight: bold;
-            color: white;
-        }
+    .button-grid>div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        footer {
-            margin-top: 40px;
-            color: rgb(255, 255, 255);
-            text-align: center;
-        }
+    .link-image {
+      border: 3px solid white;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 400px;
+      height: 250px;
+      object-fit: cover;
+      background-color: white;
+      transition: 0.3s;
+    }
 
-        footer a {
-            color: rgb(9, 9, 9);
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
+    .link-image:hover {
+      box-shadow: 0 0 20px white;
+      transform: scale(1.05);
+    }
+
+    p {
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: rgb(255, 255, 255);
+      text-align: center;
+    }
+
+    footer a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
-
-    <h1>Salman's website</h1>
+  <div class="container">
+    <h1>Salman's Website</h1>
 
     <div class="button-grid">
-        <div>
-            <a href="cube.html">
-                <img src="images/gancube.webp" alt="Rubik 3x3x3 cube" class="link-image">
-            </a>
-            <p>Cube Page</p>
-        </div>
+      <div>
+        <a href="cube.html">
+          <img src="images/gancube.webp" alt="Rubik 3x3x3 cube" class="link-image" />
+        </a>
+        <p>Cube Page</p>
+      </div>
 
-        <div>
-            <a href="CSS.html">
-                <img src="images/Introduction-To-CSS-1.jpg" alt="CSS icon" class="link-image">
-            </a>
-            <p>CSS Page</p>
-        </div>
+      <div>
+        <a href="CSS.html">
+          <img src="images/Introduction-To-CSS-1.jpg" alt="CSS icon" class="link-image" />
+        </a>
+        <p>CSS Page</p>
+      </div>
 
-        <div>
-            <a href="HTML.html">
-                <img src="images/Introduction-to-HTML-2.jpg" alt="HTML icon" class="link-image">
-            </a>
-            <p>HTML Page</p>
-        </div>
+      <div>
+        <a href="HTML.html">
+          <img src="images/Introduction-to-HTML-2.jpg" alt="HTML icon" class="link-image" />
+        </a>
+        <p>HTML Page</p>
+      </div>
 
-        <div>
-            <a href="space.html">
-                <img src="images/istockphoto-1442849073-612x612.jpg" alt="Space image" class="link-image">
-            </a>
-            <p>Space Page</p>
-        </div>
+      <div>
+        <a href="space.html">
+          <img src="images/istockphoto-1442849073-612x612.jpg" alt="Space image" class="link-image" />
+        </a>
+        <p>Space Page</p>
+      </div>
 
-        <div>
-            <a href="palestine.html">
-                <img src="images/abc_871654_007.jpg" alt="Palestine flag" class="link-image">
-            </a>
-            <p>Palestine Page</p>
-        </div>
+      <div>
+        <a href="palestine.html">
+          <img src="images/abc_871654_007.jpg" alt="Palestine flag" class="link-image" />
+        </a>
+        <p>Palestine Page</p>
+      </div>
 
-        <div>
-            <a href="sea.html">
-                <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="underwater"
-                    class="link-image">
-            </a>
-            <p>Sea page</p>
-        </div>
+      <div>
+        <a href="sea.html">
+          <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="underwater" class="link-image" />
+        </a>
+        <p>Sea Page</p>
+      </div>
     </div>
 
     <footer>
-        <p>Made by <a href="https://github.com/salmanotmani" target="_blank">Salman</a></p>
+      <p>Made by <a href="https://github.com/salmanotmani" target="_blank">Salman</a></p>
     </footer>
-
+  </div>
 </body>
 
 </html>
