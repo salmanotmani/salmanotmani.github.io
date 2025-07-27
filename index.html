@@ -19,15 +19,32 @@
             text-shadow: 2px 2px 5px black;
         }
 
+        h1 {
+            color: white;
+            font-size: 48px;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+            }
+
+            to {
+                text-shadow: 0 0 20px #ff00c8, 0 0 40px #ff00c8;
+            }
+        }
+
         .button-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 images per row */
             gap: 20px;
             max-width: 1300px;
             margin-top: 30px;
         }
 
-        .button-grid > div {
+        .button-grid>div {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -110,7 +127,8 @@
 
         <div>
             <a href="sea.html">
-                <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="underwater" class="link-image">
+                <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="underwater"
+                    class="link-image">
             </a>
             <p>Sea page</p>
         </div>
