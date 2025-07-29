@@ -143,23 +143,32 @@
         }
 
         .top-left-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
+            position: fixed;
+            /* Always stays in the top left */
+            top: 15px;
+            left: 15px;
+            z-index: 999;
+            /* Always on top */
         }
 
         .top-left-button button {
-            background-color: #222;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            /* Blue gradient */
             color: white;
-            padding: 10px 15px;
+            padding: 12px 18px;
             border: none;
-            border-radius: 8px;
-            font-size: 14px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .top-left-button button:hover {
-            background-color: #555;
+            background: linear-gradient(to right, #ff6a00, #ee0979);
+            /* Fun hover color */
+            transform: scale(1.05);
         }
 
 
@@ -240,7 +249,7 @@
 <body>
 
     <div class="header-banner">
-     Space Page
+        Space Page
     </div>
 
     <div class="flex-row">
@@ -252,7 +261,8 @@
                 <img src="images/moon earth.jpg" alt="Rubik 3x3x3 cube">
                 <p style="text-align:center; font-weight:bold;">Moon and Earth</p>
 
-                <img src="images/the-real-milky-way-our-warped-twisted-wobbly-galaxy-3-e1645572275561.jpg" alt="Normal 3x3x3 cube">
+                <img src="images/the-real-milky-way-our-warped-twisted-wobbly-galaxy-3-e1645572275561.jpg"
+                    alt="Normal 3x3x3 cube">
                 <p style="text-align:center; font-weight:bold;">Our Galaxy</p>
 
                 <img src="images/images (1).jpg" alt="Normal 3x3x3 cube">

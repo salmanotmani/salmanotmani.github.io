@@ -142,23 +142,32 @@
         }
 
         .top-left-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
+            position: fixed;
+            /* Always stays in the top left */
+            top: 15px;
+            left: 15px;
+            z-index: 999;
+            /* Always on top */
         }
 
         .top-left-button button {
-            background-color: #222;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            /* Blue gradient */
             color: white;
-            padding: 10px 15px;
+            padding: 12px 18px;
             border: none;
-            border-radius: 8px;
-            font-size: 14px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .top-left-button button:hover {
-            background-color: #555;
+            background: linear-gradient(to right, #ff6a00, #ee0979);
+            /* Fun hover color */
+            transform: scale(1.05);
         }
 
 
@@ -227,7 +236,7 @@
         .rating-stars label:hover~label {
             color: gold;
         }
-        
+
 
         footer {
             margin-top: 20px;
@@ -238,7 +247,7 @@
 <body>
 
     <div class="header-banner">
-     Sea Page
+        Sea Page
     </div>
 
     <div class="flex-row">
@@ -273,7 +282,7 @@
                 <li>🌎 The sea covers more than 70% of Earth.</li>
                 <li>🐙 An octopus has 3 hearts and blue blood!</li>
             </ul>
-            
+
 
             <details>
                 <summary>Click on the triangle.</summary>
@@ -305,7 +314,7 @@
             <h3>🔢 How many fish did you see?</h3>
             <input type="number" min="0" placeholder="Type a number">
 
-            
+
 
 
             <h5>Do you <em>like my web page?</em></h5>
@@ -342,8 +351,7 @@
 
 </body>
 <footer>
-    <p>Made by <strong><a href="https://github.com/salmanotmani"
-                target="_blank">Salman</a></strong></p>
+    <p>Made by <strong><a href="https://github.com/salmanotmani" target="_blank">Salman</a></strong></p>
 </footer>
 
 </html>

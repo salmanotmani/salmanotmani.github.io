@@ -143,25 +143,33 @@
         }
 
         .top-left-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
+            position: fixed;
+            /* Always stays in the top left */
+            top: 15px;
+            left: 15px;
+            z-index: 999;
+            /* Always on top */
         }
 
         .top-left-button button {
-            background-color: #222;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            /* Blue gradient */
             color: white;
-            padding: 10px 15px;
+            padding: 12px 18px;
             border: none;
-            border-radius: 8px;
-            font-size: 14px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .top-left-button button:hover {
-            background-color: #555;
+            background: linear-gradient(to right, #ff6a00, #ee0979);
+            /* Fun hover color */
+            transform: scale(1.05);
         }
-
 
         img {
             border: 3px solid white;
@@ -228,7 +236,7 @@
         .rating-stars label:hover~label {
             color: gold;
         }
-        
+
 
         footer {
             margin-top: 20px;
@@ -240,7 +248,7 @@
 <body>
 
     <div class="header-banner">
-     Cube Page
+        Cube Page
     </div>
 
     <div class="flex-row">
@@ -275,7 +283,7 @@
                 <li>The world record is <strong>3.13 seconds!</strong></li>
                 <li>It was invented by Ernő Rubik in 1974.</li>
             </ul>
-            
+
 
             <details>
                 <summary>Click on the triangle.</summary>
@@ -367,8 +375,7 @@
 
 </body>
 <footer>
-    <p>Made by <strong><a href="https://github.com/salmanotmani"
-                target="_blank">Salman</a></strong></p>
+    <p>Made by <strong><a href="https://github.com/salmanotmani" target="_blank">Salman</a></strong></p>
 </footer>
 
 </html>
