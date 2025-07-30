@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home Page</title>
   <style>
-    /* 🌈 Animated background using your page colors */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background: linear-gradient(-45deg,
-          #000000,    /* Space */
-          #7f00ff,    /* Cube */
-          #00bfff,    /* Sea */
-          #008000,    /* Palestine green */
-          #ff0000,    /* Palestine red */
-          #ff9900,    /* HTML */
-          #264de4,    /* CSS */
-          #000000     /* Space again */
-      );
+          #000000, #7f00ff, #00bfff, #008000, #ff0000, #ff9900, #264de4, #000000);
       background-size: 500% 500%;
       animation: gradientFlow 20s ease infinite;
       display: flex;
@@ -29,25 +20,17 @@
     }
 
     @keyframes gradientFlow {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .container {
-      width: 90%;
-      max-width: 1300px;
+      max-width: 1200px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 20px;
     }
 
     h1 {
@@ -58,24 +41,19 @@
     }
 
     @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
-      }
-
-      to {
-        text-shadow: 0 0 20px #ff00c8, 0 0 40px #ff00c8;
-      }
+      from { text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7; }
+      to { text-shadow: 0 0 20px #ff00c8, 0 0 40px #ff00c8; }
     }
 
     .button-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 30px;
+      gap: 30px;
+      margin-top: 40px;
       width: 100%;
     }
 
-    .button-grid>div {
+    .button-grid > div {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -85,7 +63,6 @@
       border: 3px solid white;
       border-radius: 15px;
       width: 100%;
-      max-width: 400px;
       height: 250px;
       object-fit: cover;
       background-color: white;
@@ -106,7 +83,7 @@
 
     footer {
       margin-top: 40px;
-      color: rgb(255, 255, 255);
+      color: white;
       text-align: center;
     }
 
@@ -119,6 +96,41 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* For tablets and smaller screens */
+    @media (max-width: 900px) {
+      .button-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .link-image {
+        height: 200px;
+      }
+    }
+
+    /* For phones */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .button-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .link-image {
+        height: auto;
+        width: 90vw;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      footer {
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 
@@ -129,7 +141,7 @@
     <div class="button-grid">
       <div>
         <a href="cube.html">
-          <img src="images/images (3).jpg" alt="Rubik 3x3x3 cube" class="link-image" />
+          <img src="images/rubik-s-cube-3d-rubik-s-in-lighting-effect_9601771.jpg!bw700" alt="Rubik Cube" class="link-image" />
         </a>
         <p>Cube Page</p>
       </div>
@@ -150,21 +162,21 @@
 
       <div>
         <a href="space.html">
-          <img src="images/istockphoto-1442849073-612x612.jpg" alt="Space image" class="link-image" />
+          <img src="images/Science-and-Nature-Planet-Earth (1).jpg" alt="Space" class="link-image" />
         </a>
         <p>Space Page</p>
       </div>
 
       <div>
         <a href="palestine.html">
-          <img src="images/abc_871654_007.jpg" alt="Palestine flag" class="link-image" />
+          <img src="images/abc_871654_007.jpg" alt="Palestine" class="link-image" />
         </a>
         <p>Palestine Page</p>
       </div>
 
       <div>
         <a href="sea.html">
-          <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="underwater" class="link-image" />
+          <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="Sea" class="link-image" />
         </a>
         <p>Sea Page</p>
       </div>
@@ -175,5 +187,4 @@
     </footer>
   </div>
 </body>
-
 </html>
