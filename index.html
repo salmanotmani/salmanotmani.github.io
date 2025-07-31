@@ -17,6 +17,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      position: relative; /* for fixed children */
     }
 
     @keyframes gradientFlow {
@@ -25,12 +26,31 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* Fixed video logo at top-left */
+    .logo-video {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+      z-index: 1000; /* so it stays on top */
+    }
+    .logo-video:hover{
+      box-shadow: 0 0 20px white;
+      transform: scale(1.05);
+    }
+
     .container {
       max-width: 1200px;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 20px;
+      width: 90vw;
+      margin-top: 150px; /* so content is not behind the fixed logo */
     }
 
     h1 {
@@ -38,6 +58,7 @@
       font-size: 48px;
       animation: glow 2s infinite alternate;
       text-align: center;
+      margin: 0;
     }
 
     @keyframes glow {
@@ -53,25 +74,59 @@
       width: 100%;
     }
 
-    .button-grid > div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .flip-card {
+      perspective: 1000px;
+      border-radius: 15px;
+      width: 100%;
     }
 
-    .link-image {
-      border: 3px solid white;
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
       border-radius: 15px;
+      box-shadow: 0 0 10px white;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 250px;
+      border-radius: 15px;
+      backface-visibility: hidden;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+    }
+
+    .flip-card-front img.link-image {
       width: 100%;
       height: 250px;
       object-fit: cover;
-      background-color: white;
-      transition: 0.3s;
+      border-radius: 15px;
+      border: 3px solid white;
+      display: block;
     }
 
-    .link-image:hover {
-      box-shadow: 0 0 20px white;
-      transform: scale(1.05);
+    .flip-card-back {
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 24px;
+      padding: 10px;
+      transform: rotateY(180deg);
+      border: 3px solid white;
     }
 
     p {
@@ -82,9 +137,11 @@
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 60px;
+      border-top: 4px solid white;
+      background-color: rgba(0, 0, 0, 0.6);
       color: white;
-      text-align: center;
+      width: 158%;
     }
 
     footer a {
@@ -97,18 +154,19 @@
       text-decoration: underline;
     }
 
-    /* For tablets and smaller screens */
     @media (max-width: 900px) {
       .button-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .link-image {
+      .flip-card-inner,
+      .flip-card-front,
+      .flip-card-back,
+      .flip-card-front img.link-image {
         height: 200px;
       }
     }
 
-    /* For phones */
     @media (max-width: 600px) {
       h1 {
         font-size: 28px;
@@ -118,72 +176,111 @@
         grid-template-columns: 1fr;
       }
 
-      .link-image {
-        height: auto;
+      .flip-card-inner,
+      .flip-card-front,
+      .flip-card-back,
+      .flip-card-front img.link-image {
         width: 90vw;
-      }
-
-      p {
-        font-size: 14px;
-      }
-
-      footer {
-        font-size: 12px;
       }
     }
   </style>
 </head>
 
 <body>
+  <!-- Animated video logo fixed top-left -->
+  <video class="logo-video" autoplay muted loop playsinline>
+    <source src="images/Design sans titre.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
   <div class="container">
     <h1>Salman's Website</h1>
 
     <div class="button-grid">
-      <div>
+      <div class="flip-card">
         <a href="cube.html">
-          <img src="images/rubik-s-cube-3d-rubik-s-in-lighting-effect_9601771.jpg!bw700" alt="Rubik Cube" class="link-image" />
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/rubik-s-cube-3d-rubik-s-in-lighting-effect_9601771.jpg!bw700" alt="Rubik Cube" class="link-image" />
+            </div>
+            <div class="flip-card-back">
+              Cube Page
+            </div>
+          </div>
         </a>
-        <p>Cube Page</p>
       </div>
 
-      <div>
+      <div class="flip-card">
         <a href="CSS.html">
-          <img src="images/Introduction-To-CSS-1.jpg" alt="CSS icon" class="link-image" />
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/Introduction-To-CSS-1.jpg" alt="CSS icon" class="link-image" />
+            </div>
+            <div class="flip-card-back">
+              CSS Page
+            </div>
+          </div>
         </a>
-        <p>CSS Page</p>
       </div>
 
-      <div>
+      <div class="flip-card">
         <a href="HTML.html">
-          <img src="images/Introduction-to-HTML-2.jpg" alt="HTML icon" class="link-image" />
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/Introduction-to-HTML-2.jpg" alt="HTML icon" class="link-image" />
+            </div>
+            <div class="flip-card-back">
+              HTML Page
+            </div>
+          </div>
         </a>
-        <p>HTML Page</p>
       </div>
 
-      <div>
+      <div class="flip-card">
         <a href="space.html">
-          <img src="images/Science-and-Nature-Planet-Earth (1).jpg" alt="Space" class="link-image" />
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/Science-and-Nature-Planet-Earth (1).jpg" alt="Space" class="link-image" />
+            </div>
+            <div class="flip-card-back">
+              Space Page
+            </div>
+          </div>
         </a>
-        <p>Space Page</p>
       </div>
 
-      <div>
+      <div class="flip-card">
         <a href="palestine.html">
-          <img src="images/abc_871654_007.jpg" alt="Palestine" class="link-image" />
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/abc_871654_007.jpg" alt="Palestine" class="link-image" />
+            </div>
+            <div class="flip-card-back">
+              Palestine Page
+            </div>
+          </div>
         </a>
-        <p>Palestine Page</p>
       </div>
 
-      <div>
+      <div class="flip-card">
         <a href="sea.html">
-          <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="Sea" class="link-image" />
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="Sea" class="link-image" />
+            </div>
+            <div class="flip-card-back">
+              Sea Page
+            </div>
+          </div>
         </a>
-        <p>Sea Page</p>
       </div>
     </div>
 
     <footer>
       <p>Made by <a href="https://github.com/salmanotmani" target="_blank">Salman</a></p>
+      <p>© 2025 Salman's Website</p>
+      <p>My first Website</p>
+      <p>Email: otmanisalman@gmail.com</p>
     </footer>
   </div>
 </body>
