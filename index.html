@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home Page</title>
+  <title>Home Page with Progress Bar</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      font-family: Arial, sans-serif;
       background: linear-gradient(-45deg,
           #000000, #7f00ff, #00bfff, #008000, #ff0000, #ff9900, #264de4, #000000);
       background-size: 500% 500%;
       animation: gradientFlow 20s ease infinite;
+      color: white;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      position: relative; /* for fixed children */
+      padding-top: 150px;
+      box-sizing: border-box;
     }
 
     @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
-    /* Fixed video logo at top-left */
+    h1 {
+      font-size: 48px;
+      animation: glow 2s infinite alternate;
+      margin: 0 0 10px 0;
+      text-align: center;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+      }
+
+      to {
+        text-shadow: 0 0 20px #ff00c8, 0 0 40px #ff00c8;
+      }
+    }
+
+    /* Container for main content */
+    .main-content {
+      width: 90vw;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .logo-video {
       position: fixed;
       top: 10px;
@@ -36,44 +71,60 @@
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid white;
-      z-index: 1000; /* so it stays on top */
-    }
-    .logo-video:hover{
-      box-shadow: 0 0 20px white;
-      transform: scale(1.05);
+      z-index: 1000;
+      transition: transform 0.6s ease;
     }
 
-    .container {
-      max-width: 1200px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      width: 90vw;
-      margin-top: 150px; /* so content is not behind the fixed logo */
+    .logo-video:hover {
+      transform: rotate(360deg);
     }
 
-    h1 {
+    /* Progress bar container */
+    .progress-container {
+      width: 100%;
+      max-width: 600px;
+      height: 30px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 5px white;
+      margin-bottom: 40px;
+    }
+
+    /* The actual progress bar */
+    .progress-bar {
+      height: 100%;
+      width: 60%;
+      /* Change this to your progress percentage */
+      background: linear-gradient(90deg, #00ffcc, #0066ff);
+      border-radius: 15px 0 0 15px;
+      transition: width 0.5s ease-in-out;
+      box-shadow: 0 0 8px #00fff7;
+      position: relative;
+    }
+
+    /* Progress text inside bar */
+    .progress-bar::after {
+      content: "60% Complete";
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
       color: white;
-      font-size: 48px;
-      animation: glow 2s infinite alternate;
-      text-align: center;
-      margin: 0;
+      font-weight: bold;
+      font-size: 16px;
+      text-shadow: 0 0 5px black;
     }
 
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7; }
-      to { text-shadow: 0 0 20px #ff00c8, 0 0 40px #ff00c8; }
-    }
-
+    /* Grid for buttons */
     .button-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
-      margin-top: 40px;
       width: 100%;
     }
 
+    /* Flip card container */
     .flip-card {
       perspective: 1000px;
       border-radius: 15px;
@@ -129,19 +180,15 @@
       border: 3px solid white;
     }
 
-    p {
-      text-align: center;
-      font-weight: bold;
-      color: white;
-      margin-top: 10px;
-    }
-
     footer {
       margin-top: 60px;
       border-top: 4px solid white;
       background-color: rgba(0, 0, 0, 0.6);
       color: white;
-      width: 158%;
+      width: 159%;
+      padding: 10px 0;
+      text-align: center;
+      box-sizing: border-box;
     }
 
     footer a {
@@ -154,6 +201,7 @@
       text-decoration: underline;
     }
 
+    /* Responsive design */
     @media (max-width: 900px) {
       .button-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -193,15 +241,20 @@
     Your browser does not support the video tag.
   </video>
 
-  <div class="container">
+  <div class="main-content">
     <h1>Salman's Website</h1>
+
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
 
     <div class="button-grid">
       <div class="flip-card">
         <a href="cube.html">
           <div class="flip-card-inner">
             <div class="flip-card-front">
-              <img src="images/rubik-s-cube-3d-rubik-s-in-lighting-effect_9601771.jpg!bw700" alt="Rubik Cube" class="link-image" />
+              <img src="images/rubik-s-cube-3d-rubik-s-in-lighting-effect_9601771.jpg!bw700" alt="Rubik Cube"
+                class="link-image" />
             </div>
             <div class="flip-card-back">
               Cube Page
@@ -283,5 +336,7 @@
       <p>Email: otmanisalman@gmail.com</p>
     </footer>
   </div>
+
 </body>
+
 </html>
