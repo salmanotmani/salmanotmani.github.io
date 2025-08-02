@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-    <title>Salman's Sea Page</title>
+    <title>Page CSS de Salman</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #1cb5e0, #000046);
+            background: linear-gradient(to right, #c8c5d9, #4df650, #01010100);
+            background-image: url('./images/shutterstock_332455154.jpg');
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -143,16 +144,16 @@
 
         .top-left-button {
             position: fixed;
-            /* Always stays in the top left */
+            /* Toujours en haut à gauche */
             top: 15px;
             left: 15px;
             z-index: 999;
-            /* Always on top */
+            /* Toujours au-dessus */
         }
 
         .top-left-button button {
             background: linear-gradient(to right, #00c6ff, #0072ff);
-            /* Blue gradient */
+            /* Dégradé bleu */
             color: white;
             padding: 12px 18px;
             border: none;
@@ -166,10 +167,9 @@
 
         .top-left-button button:hover {
             background: linear-gradient(to right, #ff6a00, #ee0979);
-            /* Fun hover color */
+            /* Couleur amusante au survol */
             transform: scale(1.05);
         }
-
 
         img {
             border: 3px solid white;
@@ -214,7 +214,7 @@
             background-color: #cde7ff;
         }
 
-        /* Star Rating */
+        /* Évaluation par étoiles */
         .rating-stars {
             display: flex;
             flex-direction: row-reverse;
@@ -237,108 +237,104 @@
             color: gold;
         }
 
-
         footer {
             margin-top: 20px;
+            text-align: center;
+            color: white;
         }
     </style>
-
-    
 </head>
 
 <body>
-    <div style="position: fixed; top: 10px; right: 10px;">
-        <a href="sea.html" style="color: white; font-weight: bold;">English</a> |
-        <a href="sea-fr.htm" style="color: white; font-weight: bold;">Français</a>
-      </div>
-
 
     <div class="header-banner">
-        Sea Page
+        Page CSS
     </div>
 
     <div class="flex-row">
         <div class="image shadow">
             <div class="left-image">
-                <img src="images/law-of-sea-inside700x400.jpg" alt="GAN cube">
-                <p style="text-align:center; font-weight:bold;">The sea</p>
+                <img src="images/css-logo-vector.svg" alt="Logo CSS">
+                <p style="text-align:center; font-weight:bold;">Logo CSS</p>
 
-                <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="Rubik 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">Under water</p>
+                <img src="images/Introduction-To-CSS-1.jpg" alt="Exemple de styles CSS">
+                <p style="text-align:center; font-weight:bold;">Introduction au CSS</p>
 
-                <img src="images/istockphoto-1393920394-612x612.jpg" alt="Normal 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">Fish in sea</p>
+                <img src="images/css-code-e1517469545230.jpeg" alt="Code CSS">
+                <p style="text-align:center; font-weight:bold;">Coder en CSS</p>
 
-                <img src="images/1492.webp" alt="Normal 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">An octopus</p>
+                <img src="images/html-css-collage-concept-with-hacker_23-2150061984.avif" alt="Développeur web utilisant CSS">
+                <p style="text-align:center; font-weight:bold;">Développement CSS</p>
             </div>
         </div>
 
         <div class="right-content shadow">
             <fieldset>
-                <legend>About the sea</legend>
-                <a href="https://fr.wikipedia.org/wiki/Ocean" target="_blank" style="color: yellow;">
-                    Learn more about the ocean
+                <legend>À propos du CSS</legend>
+                <a href="https://fr.wikipedia.org/wiki/CSS" target="_blank" style="color: yellow;">
+                    En savoir plus sur le CSS
                 </a>
             </fieldset>
 
-            <marquee>The ocean has over 1 million species 🔥 😎😏</marquee>
+            <marquee>Cette page parle de <code>css</code></marquee>
 
-            <h4>Cool Sea Facts</h4>
+            <h4>Faits sur le CSS</h4>
             <ul>
-                <li>🌎 The sea covers more than 70% of Earth.</li>
-                <li>🐙 An octopus has 3 hearts and blue blood!</li>
+                <li>CSS signifie feuilles de style en cascade.</li>
+                <li>Il a été créé par Håkon Wium Lie.</li>
             </ul>
 
-
             <details>
-                <summary>Click on the triangle.</summary>
-                The Mariana Trench is deeper than Mount Everest is tall!
+                <summary>Clique sur le triangle pour voir un conseil.</summary>
+                C’est en pratiquant qu’on devient meilleur ! Essaie de styliser quelque chose de nouveau chaque jour.
             </details>
 
-            <h3>When did you visit the sea?</h3>
-            <input type="date" name="cubing-start">
+            <h3>🌟 Quand as-tu commencé à apprendre le CSS ?</h3>
+            <input type="date" name="css-start-date">
 
-            <h3>Any sea tips to share?</h3>
-            <textarea rows="4" cols="30" placeholder="Write your tip here!"></textarea>
+            <h3>💡 Quelle est ta chose préférée dans le CSS ?</h3>
+            <textarea rows="4" cols="30" placeholder="Écris ta fonctionnalité CSS préférée !"></textarea>
 
-            <h3>Pick your favorite sea color:</h3>
-            <input type="color" name="cube-color">
-
-            <h3>Do you like swiming? 🤨</h3>
-            <label><input type="checkbox"> Sure</label>
-            <label><input type="checkbox"> A bit</label>
-            <label><input type="checkbox"> No</label>
-
-            <h3>What's your favorite sea animal ?</h3>
-            <select class="cube-dropdown">
-                <option>Dolphin</option>
-                <option>Octopus</option>
-                <option>Shark</option>
-                <option>Jellyfish</option>
-                <option>Sea turtule</option>
+            <h3>📚 Quelle propriété CSS préfères-tu ?</h3>
+            <select name="favorite-property" class="cube-dropdown">
+                <option>color</option>
+                <option>background-color</option>
+                <option>font-size</option>
+                <option>margin</option>
+                <option>padding</option>
+                <option>border-radius</option>
             </select>
-            <h3>🔢 How many fish did you see?</h3>
-            <input type="number" min="0" placeholder="Type a number">
 
+            <h3>🧩 Le CSS, c’est facile pour toi ?</h3>
+            <select name="css-difficulty" class="cube-dropdown">
+                <option>Très facile</option>
+                <option>Facile</option>
+                <option>Pas mal</option>
+                <option>Difficile</option>
+                <option>J’apprends encore !</option>
+            </select>
 
+            <h3>🔢 Combien de propriétés CSS connais-tu ?</h3>
+            <input type="number" min="0" name="known-properties" placeholder="Entre un nombre">
 
+            <h3>🚀 Tu veux en apprendre plus sur le CSS ?</h3>
+            <p>Regarde <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" style="color: blue;">le guide CSS de MDN</a> pour apprendre à coder !</p>
 
-            <h5>Do you <em>like my web page?</em></h5>
+            <h5>Aimes-tu <em>ma page CSS ?</em></h5>
             <div class="button-container-row">
-                <button class="Yes" onclick="alert('✅ Thank you!')">Yes</button>
-                <button class="No" onclick="alert('❌ Error ❌')">No</button>
+                <button class="Yes" onclick="alert('✅ Merci !')">Oui</button>
+                <button class="No" onclick="alert('❌ Erreur ❌')">Non</button>
             </div>
 
             <br><br>
             <form>
                 <div class="large">
-                    <input type="text" name="things" placeholder="Things to add." required style="height: 32px;">
-                    <button class="Submit" type="submit" onclick="alert('OK 👍')">Submit</button>
+                    <input type="text" name="things" placeholder="Choses à ajouter." required style="height: 32px;">
+                    <button class="Submit" type="submit" onclick="alert('OK 👍')">Envoyer</button>
                 </div>
             </form>
 
-            <h3>⭐ Rate My Cube Page!</h3>
+            <h3>⭐ Note ma page CSS !</h3>
             <div class="rating-stars">
                 <input type="radio" name="stars" id="star5"><label for="star5">★</label>
                 <input type="radio" name="stars" id="star4"><label for="star4">★</label>
@@ -346,19 +342,17 @@
                 <input type="radio" name="stars" id="star2"><label for="star2">★</label>
                 <input type="radio" name="stars" id="star1"><label for="star1">★</label>
             </div>
-
-
         </div>
     </div>
     <div class="top-left-button">
         <a href="index.html">
-            <button>🔗 Go to Home Page</button>
+            <button>🔗 Aller à la page d’accueil</button>
         </a>
     </div>
 
 </body>
 <footer>
-    <p>Made by <strong><a href="https://github.com/salmanotmani" target="_blank">Salman</a></strong></p>
+    <p>Réalisé par <strong><a href="https://github.com/salmanotmani" target="_blank">Salman</a></strong></p>
 </footer>
 
 </html>

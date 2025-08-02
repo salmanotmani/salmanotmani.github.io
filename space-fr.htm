@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-    <title>Salman's Sea Page</title>
+    <title>Page de l'Espace de Salman</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #1cb5e0, #000046);
+            background: linear-gradient(to right, #030303);
+            background-image: url('./images/olena-bohovyk-Cq5NaI0yKBE-unsplash.jpg');
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -240,105 +241,123 @@
 
         footer {
             margin-top: 20px;
+            color: white;
         }
     </style>
-
-    
 </head>
 
 <body>
     <div style="position: fixed; top: 10px; right: 10px;">
-        <a href="sea.html" style="color: white; font-weight: bold;">English</a> |
-        <a href="sea-fr.htm" style="color: white; font-weight: bold;">Français</a>
+        <a href="space.html" style="color: white; font-weight: bold;">English</a> |
+        <a href="space-fr.htm" style="color: white; font-weight: bold;">Français</a>
       </div>
 
 
     <div class="header-banner">
-        Sea Page
+        Page de l'Espace
     </div>
 
     <div class="flex-row">
         <div class="image shadow">
             <div class="left-image">
-                <img src="images/law-of-sea-inside700x400.jpg" alt="GAN cube">
-                <p style="text-align:center; font-weight:bold;">The sea</p>
+                <img src="images/unjetpack.webp" alt="cube GAN">
+                <p style="text-align:center; font-weight:bold;">astronaute dans l'espace</p>
 
-                <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="Rubik 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">Under water</p>
+                <img src="images/moon earth.jpg" alt="cube Rubik 3x3x3">
+                <p style="text-align:center; font-weight:bold;">Lune et Terre</p>
 
-                <img src="images/istockphoto-1393920394-612x612.jpg" alt="Normal 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">Fish in sea</p>
+                <img src="images/the-real-milky-way-our-warped-twisted-wobbly-galaxy-3-e1645572275561.jpg" alt="cube normal 3x3x3">
+                <p style="text-align:center; font-weight:bold;">Notre galaxie</p>
 
-                <img src="images/1492.webp" alt="Normal 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">An octopus</p>
+                <img src="images/images (1).jpg" alt="cube normal 3x3x3">
+                <p style="text-align:center; font-weight:bold;">Un trou noir</p>
             </div>
         </div>
 
         <div class="right-content shadow">
             <fieldset>
-                <legend>About the sea</legend>
-                <a href="https://fr.wikipedia.org/wiki/Ocean" target="_blank" style="color: yellow;">
-                    Learn more about the ocean
+                <legend>À propos de l'Espace</legend>
+                <a href="https://fr.wikipedia.org/wiki/Espace_extraterrestre" target="_blank" style="color: yellow;">
+                    En savoir plus sur l'espace !
                 </a>
             </fieldset>
 
-            <marquee>The ocean has over 1 million species 🔥 😎😏</marquee>
+            <marquee>🌀 La Voie lactée fait environ : <strong>100 000</strong>⭐ années-lumière de large ! 🔥 😎😏</marquee>
 
-            <h4>Cool Sea Facts</h4>
+            <h4>Faits intéressants sur l'espace</h4>
             <ul>
-                <li>🌎 The sea covers more than 70% of Earth.</li>
-                <li>🐙 An octopus has 3 hearts and blue blood!</li>
+                <li>La lumière voyage à 300 000 km par seconde.</li>
+                <li>Notre système solaire a 4,6 milliards d'années.</li>
             </ul>
 
-
             <details>
-                <summary>Click on the triangle.</summary>
-                The Mariana Trench is deeper than Mount Everest is tall!
+                <summary>Clique sur le triangle.</summary>
+                Le vaisseau spatial le plus rapide dépasse les 150 000 km/h !
             </details>
 
-            <h3>When did you visit the sea?</h3>
+            <h3>Quand as-tu découvert l'espace ?</h3>
             <input type="date" name="cubing-start">
 
-            <h3>Any sea tips to share?</h3>
-            <textarea rows="4" cols="30" placeholder="Write your tip here!"></textarea>
+            <h3>As-tu des infos sur les cubes spatiaux ?</h3>
+            <textarea rows="4" cols="30" placeholder="Écris ton astuce ici !"></textarea>
 
-            <h3>Pick your favorite sea color:</h3>
+            <h3>Choisis ta couleur spatiale préférée :</h3>
             <input type="color" name="cube-color">
 
-            <h3>Do you like swiming? 🤨</h3>
-            <label><input type="checkbox"> Sure</label>
-            <label><input type="checkbox"> A bit</label>
-            <label><input type="checkbox"> No</label>
+            <h3>À quelle fréquence regardes-tu les étoiles ? 🌟</h3>
+            <label><input type="radio" name="star-watching" value="rarely"> Rarement : une fois par mois</label><br>
+            <label><input type="radio" name="star-watching" value="sometimes"> Parfois : une fois par semaine</label><br>
+            <label><input type="radio" name="star-watching" value="often"> Souvent : chaque nuit</label>
 
-            <h3>What's your favorite sea animal ?</h3>
-            <select class="cube-dropdown">
-                <option>Dolphin</option>
-                <option>Octopus</option>
-                <option>Shark</option>
-                <option>Jellyfish</option>
-                <option>Sea turtule</option>
+            <h3>Aimes-tu apprendre sur l'espace ? 🚀</h3>
+            <label><input type="checkbox"> Oui, beaucoup !</label>
+            <label><input type="checkbox"> Parfois</label>
+            <label><input type="checkbox"> Pas vraiment</label>
+
+            <h3>À quel point la science de l'espace est-elle difficile pour toi ?</h3>
+            <select class="space-dropdown">
+                <option>Facile</option>
+                <option>Moyen</option>
+                <option>Difficile</option>
+                <option>Très difficile 😵</option>
             </select>
-            <h3>🔢 How many fish did you see?</h3>
-            <input type="number" min="0" placeholder="Type a number">
 
+            <h3>🌌 Combien de faits sur l'espace connais-tu ?</h3>
+            <input type="number" min="0" placeholder="Écris un nombre">
 
+            <h3>Quel est ton rêve spatial ?</h3>
+            <input type="text" placeholder="Exemple : Devenir astronaute">
 
+            <h3>Choisis ta planète préférée :</h3>
+            <select class="space-dropdown">
+                <option>Mercure</option>
+                <option>Vénus</option>
+                <option>Terre</option>
+                <option>Mars</option>
+                <option>Jupiter</option>
+                <option>Saturne</option>
+                <option>Uranus</option>
+                <option>Neptune</option>
+            </select>
 
-            <h5>Do you <em>like my web page?</em></h5>
+            <h3>🌍 Explore les missions spatiales</h3>
+            <p>Regarde <a href="https://www.nasa.gov/missions" target="_blank" style="color: yellow;">les missions de la NASA</a> !</p>
+
+            <h5>Est-ce que tu <em>aimes ma page web ?</em></h5>
             <div class="button-container-row">
-                <button class="Yes" onclick="alert('✅ Thank you!')">Yes</button>
-                <button class="No" onclick="alert('❌ Error ❌')">No</button>
+                <button class="Yes" onclick="alert('✅ Merci !')">Oui</button>
+                <button class="No" onclick="alert('❌ Erreur ❌')">Non</button>
             </div>
 
             <br><br>
             <form>
                 <div class="large">
-                    <input type="text" name="things" placeholder="Things to add." required style="height: 32px;">
-                    <button class="Submit" type="submit" onclick="alert('OK 👍')">Submit</button>
+                    <input type="text" name="things" placeholder="Choses à ajouter." required style="height: 32px;">
+                    <button class="Submit" type="submit" onclick="alert('OK 👍')">Envoyer</button>
                 </div>
             </form>
 
-            <h3>⭐ Rate My Cube Page!</h3>
+            <h3>⭐ Note ma page Cube !</h3>
             <div class="rating-stars">
                 <input type="radio" name="stars" id="star5"><label for="star5">★</label>
                 <input type="radio" name="stars" id="star4"><label for="star4">★</label>
@@ -346,19 +365,18 @@
                 <input type="radio" name="stars" id="star2"><label for="star2">★</label>
                 <input type="radio" name="stars" id="star1"><label for="star1">★</label>
             </div>
-
-
         </div>
     </div>
+
     <div class="top-left-button">
         <a href="index.html">
-            <button>🔗 Go to Home Page</button>
+            <button>🔗 Aller à la page d’accueil</button>
         </a>
     </div>
 
 </body>
 <footer>
-    <p>Made by <strong><a href="https://github.com/salmanotmani" target="_blank">Salman</a></strong></p>
+    <p>Fait par <strong><a href="https://github.com/salmanotmani" target="_blank">Salman</a></strong></p>
 </footer>
 
 </html>

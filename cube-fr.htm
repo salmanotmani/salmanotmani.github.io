@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-    <title>Salman's Sea Page</title>
+    <title>Page Cube de Salman</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #1cb5e0, #000046);
+            background: linear-gradient(to right, #4799db, #7f00ff, #e100ff);
+            background-image: url('./images/rubik-s-cubes-background-falling-multicolored-rubik-s-cubes-over-alpha-channel-rain-of-rubik-s-cubes-across-the-screen-video.jpg');
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -143,16 +144,16 @@
 
         .top-left-button {
             position: fixed;
-            /* Always stays in the top left */
+            /* Toujours en haut à gauche */
             top: 15px;
             left: 15px;
             z-index: 999;
-            /* Always on top */
+            /* Toujours au-dessus */
         }
 
         .top-left-button button {
             background: linear-gradient(to right, #00c6ff, #0072ff);
-            /* Blue gradient */
+            /* Dégradé bleu */
             color: white;
             padding: 12px 18px;
             border: none;
@@ -166,10 +167,9 @@
 
         .top-left-button button:hover {
             background: linear-gradient(to right, #ff6a00, #ee0979);
-            /* Fun hover color */
+            /* Couleur amusante au survol */
             transform: scale(1.05);
         }
-
 
         img {
             border: 3px solid white;
@@ -214,7 +214,7 @@
             background-color: #cde7ff;
         }
 
-        /* Star Rating */
+        /* Évaluation par étoiles */
         .rating-stars {
             display: flex;
             flex-direction: row-reverse;
@@ -240,105 +240,122 @@
 
         footer {
             margin-top: 20px;
+            color: white;
         }
     </style>
-
-    
 </head>
 
 <body>
     <div style="position: fixed; top: 10px; right: 10px;">
-        <a href="sea.html" style="color: white; font-weight: bold;">English</a> |
-        <a href="sea-fr.htm" style="color: white; font-weight: bold;">Français</a>
+        <a href="cube.html" style="color: white; font-weight: bold;">English</a> |
+        <a href="cube-fr.htm" style="color: white; font-weight: bold;">Français</a>
       </div>
 
-
     <div class="header-banner">
-        Sea Page
+        Page Cube
     </div>
 
     <div class="flex-row">
         <div class="image shadow">
             <div class="left-image">
-                <img src="images/law-of-sea-inside700x400.jpg" alt="GAN cube">
-                <p style="text-align:center; font-weight:bold;">The sea</p>
+                <img src="images/gancube.webp" alt="Cube GAN">
+                <p style="text-align:center; font-weight:bold;">Cube GAN</p>
 
-                <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="Rubik 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">Under water</p>
+                <img src="images/rubiks.webp" alt="Cube Rubik 3x3x3">
+                <p style="text-align:center; font-weight:bold;">Cube Rubik original</p>
 
-                <img src="images/istockphoto-1393920394-612x612.jpg" alt="Normal 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">Fish in sea</p>
+                <img src="images/rubiks-cube.gif" alt="Cube 3x3x3 normal">
+                <p style="text-align:center; font-weight:bold;">Cube 3x3x3 normal</p>
 
-                <img src="images/1492.webp" alt="Normal 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">An octopus</p>
+                <img src="images/cube.jpg" alt="Cube 3x3x3 normal">
+                <p style="text-align:center; font-weight:bold;">Un cube 3x3x3</p>
             </div>
         </div>
 
         <div class="right-content shadow">
             <fieldset>
-                <legend>About the sea</legend>
-                <a href="https://fr.wikipedia.org/wiki/Ocean" target="_blank" style="color: yellow;">
-                    Learn more about the ocean
+                <legend>À propos de mon Speedcubing</legend>
+                <a href="https://fr.wikipedia.org/wiki/Speedcubing" target="_blank" style="color: yellow;">
+                    En savoir plus sur le speedcubing
                 </a>
             </fieldset>
 
-            <marquee>The ocean has over 1 million species 🔥 😎😏</marquee>
+            <marquee>Mon record de cube est de <strong>20 secondes</strong> ! 🔥 😎😏</marquee>
 
-            <h4>Cool Sea Facts</h4>
+            <h4>Faits sympas sur le Rubik's Cube</h4>
             <ul>
-                <li>🌎 The sea covers more than 70% of Earth.</li>
-                <li>🐙 An octopus has 3 hearts and blue blood!</li>
+                <li>Le record mondial est de <strong>3,13 secondes !</strong></li>
+                <li>Il a été inventé par Ernő Rubik en 1974.</li>
             </ul>
 
-
             <details>
-                <summary>Click on the triangle.</summary>
-                The Mariana Trench is deeper than Mount Everest is tall!
+                <summary>Clique sur le triangle.</summary>
+                Essaie de battre un nouveau record 😄 !
             </details>
 
-            <h3>When did you visit the sea?</h3>
+            <br>
+            <a href="https://cstimer.net/" target="_blank">
+                <button class="Simulator">🕹️ Essaie un simulateur de cube</button>
+            </a>
+            <h3>Quand as-tu appris à faire du cube ?</h3>
             <input type="date" name="cubing-start">
 
-            <h3>Any sea tips to share?</h3>
-            <textarea rows="4" cols="30" placeholder="Write your tip here!"></textarea>
+            <h3>As-tu des astuces pour le cube ?</h3>
+            <textarea rows="4" cols="30" placeholder="Écris ton astuce ici !"></textarea>
 
-            <h3>Pick your favorite sea color:</h3>
+            <h3>Choisis ta couleur de cube préférée :</h3>
             <input type="color" name="cube-color">
 
-            <h3>Do you like swiming? 🤨</h3>
-            <label><input type="checkbox"> Sure</label>
-            <label><input type="checkbox"> A bit</label>
-            <label><input type="checkbox"> No</label>
+            <h3>Quel est ton temps moyen ? 🤔</h3>
+            <label><input type="radio" name="Starter" value="Starter"> Débutant : 1m - 1m30s</label><br>
+            <label><input type="radio" name="advanced" value="advanced"> Avancé : 20s - 45s</label><br>
+            <label><input type="radio" name="Expert" value="Expert"> Expert : 3s - 20s</label>
 
-            <h3>What's your favorite sea animal ?</h3>
+            <h3>Aimes-tu jouer avec ton cube ? 🤨</h3>
+            <label><input type="checkbox"> Oui</label>
+            <label><input type="checkbox"> Un peu</label>
+            <label><input type="checkbox"> Non</label>
+
+            <h3>Est-ce difficile de résoudre un cube pour toi ?</h3>
             <select class="cube-dropdown">
-                <option>Dolphin</option>
-                <option>Octopus</option>
-                <option>Shark</option>
-                <option>Jellyfish</option>
-                <option>Sea turtule</option>
+                <option>Facile</option>
+                <option>Moyen</option>
+                <option>Difficile</option>
+                <option>Impossible 😵</option>
             </select>
-            <h3>🔢 How many fish did you see?</h3>
-            <input type="number" min="0" placeholder="Type a number">
+            <h3>🔢 Combien de cubes as-tu résolus aujourd'hui ?</h3>
+            <input type="number" min="0" placeholder="Tape un nombre">
 
+            <h3>Quel est ton temps objectif pour le cube ?</h3>
+            <input type="number" placeholder="(en secondes)">
 
+            <h3>Choisis ton type de cube préféré :</h3>
+            <select class="cube-dropdown">
+                <option>2x2</option>
+                <option>3x3</option>
+                <option>4x4</option>
+                <option>Cube miroir</option>
+                <option>Pyraminx</option>
+                <option>Megaminx</option>
+            </select>
+            <h3>🌍 Le cube autour du monde</h3>
+            <p>Regarde <a href="https://www.worldcubeassociation.org/competitions" target="_blank" style="color: yellow;">les compétitions WCA</a> !</p>
 
-
-            <h5>Do you <em>like my web page?</em></h5>
+            <h5>Aimes-tu <em>ma page web ?</em></h5>
             <div class="button-container-row">
-                <button class="Yes" onclick="alert('✅ Thank you!')">Yes</button>
-                <button class="No" onclick="alert('❌ Error ❌')">No</button>
+                <button class="Yes" onclick="alert('✅ Merci !')">Oui</button>
+                <button class="No" onclick="alert('❌ Erreur ❌')">Non</button>
             </div>
 
             <br><br>
             <form>
                 <div class="large">
-                    <input type="text" name="things" placeholder="Things to add." required style="height: 32px;">
-                    <button class="Submit" type="submit" onclick="alert('OK 👍')">Submit</button>
+                    <input type="text" name="things" placeholder="Choses à ajouter." required style="height: 32px;">
+                    <button class="Submit" type="submit" onclick="alert('OK 👍')">Envoyer</button>
                 </div>
             </form>
 
-            <h3>⭐ Rate My Cube Page!</h3>
+            <h3>⭐ Note ma page Cube !</h3>
             <div class="rating-stars">
                 <input type="radio" name="stars" id="star5"><label for="star5">★</label>
                 <input type="radio" name="stars" id="star4"><label for="star4">★</label>
@@ -346,19 +363,17 @@
                 <input type="radio" name="stars" id="star2"><label for="star2">★</label>
                 <input type="radio" name="stars" id="star1"><label for="star1">★</label>
             </div>
-
-
         </div>
     </div>
     <div class="top-left-button">
         <a href="index.html">
-            <button>🔗 Go to Home Page</button>
+            <button>🔗 Aller à la page d’accueil</button>
         </a>
     </div>
 
 </body>
 <footer>
-    <p>Made by <strong><a href="https://github.com/salmanotmani" target="_blank">Salman</a></strong></p>
+    <p>Réalisé par <strong><a href="https://github.com/salmanotmani" target="_blank">Salman</a></strong></p>
 </footer>
 
 </html>

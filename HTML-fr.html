@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-    <title>Salman's Sea Page</title>
+    <title>Page HTML de Salman</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #1cb5e0, #000046);
+            background: linear-gradient(to right, #c8c5d9, #e3f64d, #01010100);
+            background-image: url('./images/GettyImages-1069786222.webp');
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -170,7 +171,6 @@
             transform: scale(1.05);
         }
 
-
         img {
             border: 3px solid white;
             border-radius: 15px;
@@ -214,7 +214,6 @@
             background-color: #cde7ff;
         }
 
-        /* Star Rating */
         .rating-stars {
             display: flex;
             flex-direction: row-reverse;
@@ -237,108 +236,109 @@
             color: gold;
         }
 
-
         footer {
             margin-top: 20px;
+            text-align: center;
+            color: white;
         }
     </style>
-
-    
 </head>
 
 <body>
     <div style="position: fixed; top: 10px; right: 10px;">
-        <a href="sea.html" style="color: white; font-weight: bold;">English</a> |
-        <a href="sea-fr.htm" style="color: white; font-weight: bold;">Français</a>
-      </div>
-
+        <a href="HTML.html" style="color: white; font-weight: bold;">Anglais</a> |
+        <a href="HTML-fr.html" style="color: white; font-weight: bold;">Français</a>
+    </div>
 
     <div class="header-banner">
-        Sea Page
+        Page HTML
     </div>
 
     <div class="flex-row">
         <div class="image shadow">
             <div class="left-image">
-                <img src="images/law-of-sea-inside700x400.jpg" alt="GAN cube">
-                <p style="text-align:center; font-weight:bold;">The sea</p>
+                <img src="images/icone-html-orange.png" alt="Logo HTML">
+                <p style="text-align:center; font-weight:bold;">Logo HTML</p>
 
-                <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="Rubik 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">Under water</p>
+                <img src="images/Introduction-to-HTML-2.jpg" alt="Introduction à HTML">
+                <p style="text-align:center; font-weight:bold;">Introduction à HTML</p>
 
-                <img src="images/istockphoto-1393920394-612x612.jpg" alt="Normal 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">Fish in sea</p>
+                <img src="images/881415294f_50170557_code-html-sashkin-adobe-stock.jpg" alt="Codage HTML">
+                <p style="text-align:center; font-weight:bold;">Codage HTML</p>
 
-                <img src="images/1492.webp" alt="Normal 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">An octopus</p>
+                <img src="images/hacker-desk-using-laptop-with-creative-coding-html-language-blurry-office-interior-background-web-developer-hacking-malware-programming-concept-double-exposure_670147-63706.avif"
+                    alt="Développement HTML">
+                <p style="text-align:center; font-weight:bold;">Développement HTML</p>
             </div>
         </div>
 
         <div class="right-content shadow">
             <fieldset>
-                <legend>About the sea</legend>
-                <a href="https://fr.wikipedia.org/wiki/Ocean" target="_blank" style="color: yellow;">
-                    Learn more about the ocean
+                <legend>À propos de HTML</legend>
+                <a href="https://fr.wikipedia.org/wiki/HTML" target="_blank" style="color: yellow;">
+                    En savoir plus sur HTML
                 </a>
             </fieldset>
 
-            <marquee>The ocean has over 1 million species 🔥 😎😏</marquee>
+            <marquee>Cette page parle de <code>html</code></marquee>
 
-            <h4>Cool Sea Facts</h4>
+            <h4>Faits sur HTML</h4>
             <ul>
-                <li>🌎 The sea covers more than 70% of Earth.</li>
-                <li>🐙 An octopus has 3 hearts and blue blood!</li>
+                <li>Il a été inventé par Tim Berners-Lee.</li>
+                <li>HTML signifie Hypertext Markup Language</li>
             </ul>
 
-
             <details>
-                <summary>Click on the triangle.</summary>
-                The Mariana Trench is deeper than Mount Everest is tall!
+                <summary>Clique sur le triangle.</summary>
+                Essaie de travailler tous les jours
             </details>
 
-            <h3>When did you visit the sea?</h3>
-            <input type="date" name="cubing-start">
+            <h3>🌟 Quand as-tu commencé à apprendre HTML ?</h3>
+            <input type="date" name="html-start-date">
 
-            <h3>Any sea tips to share?</h3>
-            <textarea rows="4" cols="30" placeholder="Write your tip here!"></textarea>
+            <h3>💡 Quelle est ta chose préférée sur HTML ?</h3>
+            <textarea rows="4" cols="30" placeholder="Écris ta fonctionnalité HTML préférée !"></textarea>
 
-            <h3>Pick your favorite sea color:</h3>
-            <input type="color" name="cube-color">
-
-            <h3>Do you like swiming? 🤨</h3>
-            <label><input type="checkbox"> Sure</label>
-            <label><input type="checkbox"> A bit</label>
-            <label><input type="checkbox"> No</label>
-
-            <h3>What's your favorite sea animal ?</h3>
-            <select class="cube-dropdown">
-                <option>Dolphin</option>
-                <option>Octopus</option>
-                <option>Shark</option>
-                <option>Jellyfish</option>
-                <option>Sea turtule</option>
+            <h3>📚 Quelle balise HTML aimes-tu le plus ?</h3>
+            <select name="favorite-tag" class="cube-dropdown">
+                <option>&lt;p&gt; — Paragraphe</option>
+                <option>&lt;img&gt; — Image</option>
+                <option>&lt;a&gt; — Lien</option>
+                <option>&lt;h1&gt; — Titre</option>
+                <option>&lt;div&gt; — Conteneur</option>
             </select>
-            <h3>🔢 How many fish did you see?</h3>
-            <input type="number" min="0" placeholder="Type a number">
 
+            <h3>🧩 HTML est-il facile pour toi ?</h3>
+            <select name="html-difficulty" class="cube-dropdown">
+                <option>Très facile</option>
+                <option>Facile</option>
+                <option>Moyen</option>
+                <option>Difficile</option>
+                <option>J'apprends encore !</option>
+            </select>
 
+            <h3>🔢 Combien de balises HTML connais-tu ?</h3>
+            <input type="number" min="0" name="known-tags" placeholder="Entre un nombre">
 
+            <h3>🚀 Tu veux en apprendre plus sur HTML ?</h3>
+            <p>Regarde le <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank"
+                    style="color: blue;">Guide HTML sur MDN</a> pour apprendre à coder !</p>
 
-            <h5>Do you <em>like my web page?</em></h5>
+            <h5>Est-ce que tu <em>aimes ma page web ?</em></h5>
             <div class="button-container-row">
-                <button class="Yes" onclick="alert('✅ Thank you!')">Yes</button>
-                <button class="No" onclick="alert('❌ Error ❌')">No</button>
+                <button class="Yes" onclick="alert('✅ Merci !')">Oui</button>
+                <button class="No" onclick="alert('❌ Erreur ❌')">Non</button>
             </div>
 
             <br><br>
             <form>
                 <div class="large">
-                    <input type="text" name="things" placeholder="Things to add." required style="height: 32px;">
-                    <button class="Submit" type="submit" onclick="alert('OK 👍')">Submit</button>
+                    <input type="text" name="things" placeholder="Choses à ajouter." required style="height: 32px;">
+                    <button class="Submit" type="submit" onclick="alert('OK 👍')">Envoyer</button>
                 </div>
             </form>
 
-            <h3>⭐ Rate My Cube Page!</h3>
+            <h3>⭐ Note ma page HTML !</h3>
             <div class="rating-stars">
                 <input type="radio" name="stars" id="star5"><label for="star5">★</label>
                 <input type="radio" name="stars" id="star4"><label for="star4">★</label>
@@ -347,18 +347,17 @@
                 <input type="radio" name="stars" id="star1"><label for="star1">★</label>
             </div>
 
-
         </div>
     </div>
     <div class="top-left-button">
         <a href="index.html">
-            <button>🔗 Go to Home Page</button>
+            <button>🔗 Aller à la page d'accueil</button>
         </a>
     </div>
 
 </body>
 <footer>
-    <p>Made by <strong><a href="https://github.com/salmanotmani" target="_blank">Salman</a></strong></p>
+    <p>Fait par <strong><a href="https://github.com/salmanotmani" target="_blank">Salman</a></strong></p>
 </footer>
 
 </html>
