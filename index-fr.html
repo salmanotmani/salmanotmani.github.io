@@ -2,328 +2,329 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Page d'accueil</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(-45deg,
-          #000000, #7f00ff, #00bfff, #008000, #ff0000, #ff9900, #264de4, #000000);
-      background-size: 500% 500%;
-      animation: gradientFlow 20s ease infinite;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding-top: 150px;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page d'accueil</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(-45deg,
+                    #000000, #7f00ff, #00bfff, #008000, #ff0000, #ff9900, #264de4, #000000);
+            background-size: 500% 500%;
+            animation: gradientFlow 20s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding-top: 150px;
+            box-sizing: border-box;
+        }
 
-    @keyframes gradientFlow {
-      0% {
-        background-position: 0% 50%;
-      }
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
 
-      50% {
-        background-position: 100% 50%;
-      }
+            50% {
+                background-position: 100% 50%;
+            }
 
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-    h1 {
-      font-size: 48px;
-      animation: glow 2s infinite alternate;
-      margin: 0 0 10px 0;
-      text-align: center;
-    }
+        h1 {
+            font-size: 48px;
+            animation: glow 2s infinite alternate;
+            margin: 0 0 10px 0;
+            text-align: center;
+        }
 
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
-      }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+            }
 
-      to {
-        text-shadow: 0 0 20px #ff00c8, 0 0 40px #ff00c8;
-      }
-    }
+            to {
+                text-shadow: 0 0 20px #ff00c8, 0 0 40px #ff00c8;
+            }
+        }
 
-    .main-content {
-      width: 90vw;
-      max-width: 1200px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        .main-content {
+            width: 90vw;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .logo-video {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid white;
-      z-index: 1000;
-      transition: transform 0.6s ease;
-    }
+        .logo-video {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            z-index: 1000;
+            transition: transform 0.6s ease;
+        }
 
-    .logo-video:hover {
-      transform: rotate(360deg);
-    }
+        .logo-video:hover {
+            transform: rotate(360deg);
+        }
 
-    .progress-container {
-      width: 100%;
-      max-width: 600px;
-      height: 30px;
-      background-color: rgba(255, 255, 255, 0.2);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 0 5px white;
-      margin-bottom: 40px;
-    }
+        .progress-container {
+            width: 100%;
+            max-width: 600px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 5px white;
+            margin-bottom: 40px;
+        }
 
-    .progress-bar {
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(90deg, #000000, #0066ff);
-      border-radius: 15px 0 0 15px;
-      transition: width 0.5s ease-in-out;
-      box-shadow: 0 0 8px #00fff7;
-      position: relative;
-    }
+        .progress-bar {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, #000000, #0066ff);
+            border-radius: 15px 0 0 15px;
+            transition: width 0.5s ease-in-out;
+            box-shadow: 0 0 8px #00fff7;
+            position: relative;
+        }
 
-    .progress-bar::after {
-      content: "100% Complété";
-      position: absolute;
-      right: 220px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
-      text-shadow: 0 0 5px black;
-    }
+        .progress-bar::after {
+            content: "100% Complété";
+            position: absolute;
+            right: 220px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-shadow: 0 0 5px black;
+        }
 
-    .button-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      width: 100%;
-    }
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+        }
 
-    .flip-card {
-      perspective: 1000px;
-      border-radius: 15px;
-      width: 100%;
-      height: 250px;
-    }
+        .flip-card {
+            perspective: 1000px;
+            border-radius: 15px;
+            width: 100%;
+            height: 250px;
+        }
 
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-      border-radius: 15px;
-      box-shadow: 0 0 10px white;
-    }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            border-radius: 15px;
+            box-shadow: 0 0 10px white;
+        }
 
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
 
-    .flip-card-front,
-    .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 15px;
-      backface-visibility: hidden;
-      overflow: hidden;
-      top: 0;
-      left: 0;
-    }
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
 
-    .flip-card-front img.link-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 15px;
-      border: 3px solid white;
-      display: block;
-    }
+        .flip-card-front img.link-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 3px solid white;
+            display: block;
+        }
 
-    .flip-card-back {
-      background-color: #222;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      font-size: 24px;
-      padding: 10px;
-      transform: rotateY(180deg);
-      border: 3px solid white;
-    }
+        .flip-card-back {
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 24px;
+            padding: 10px;
+            transform: rotateY(180deg);
+            border: 3px solid white;
+        }
 
-    footer {
-      margin-top: 60px;
-      border-top: 4px solid white;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      width: 159%;
-      padding: 10px 0;
-      text-align: center;
-      box-sizing: border-box;
-    }
+        footer {
+            margin-top: 60px;
+            border-top: 4px solid white;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            width: 159%;
+            padding: 10px 0;
+            text-align: center;
+            box-sizing: border-box;
+        }
 
-    footer a {
-      color: #00ffff;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        footer a {
+            color: #00ffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+        footer a:hover {
+            text-decoration: underline;
+        }
 
-    @media (max-width: 900px) {
-      .button-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+        @media (max-width: 900px) {
+            .button-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
-      .flip-card,
-      .flip-card-inner,
-      .flip-card-front,
-      .flip-card-back,
-      .flip-card-front img.link-image {
-        height: 200px;
-      }
-    }
+            .flip-card,
+            .flip-card-inner,
+            .flip-card-front,
+            .flip-card-back,
+            .flip-card-front img.link-image {
+                height: 200px;
+            }
+        }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 28px;
-      }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
 
-      .button-grid {
-        grid-template-columns: 1fr;
-      }
+            .button-grid {
+                grid-template-columns: 1fr;
+            }
 
-      .flip-card,
-      .flip-card-inner,
-      .flip-card-front,
-      .flip-card-back,
-      .flip-card-front img.link-image {
-        width: 90vw;
-      }
-    }
-  </style>
+            .flip-card,
+            .flip-card-inner,
+            .flip-card-front,
+            .flip-card-back,
+            .flip-card-front img.link-image {
+                width: 90vw;
+            }
+        }
+    </style>
 </head>
 
 <body>
- 
-      <div style="position: fixed; top: 10px; right: 10px;">
-        <a href="index.html" style="color: white; font-weight: bold;">English</a> |
-        <a href="index-fr.html" style="color: white; font-weight: bold;">Français</a>
-      </div>
-  
 
-  <video class="logo-video" autoplay muted loop playsinline>
-    <source src="images/Design sans titre.mp4" type="video/mp4" />
-    Votre navigateur ne supporte pas la balise vidéo.
-  </video>
-
-  <div class="main-content">
-    <h1>Le site de Salman</h1>
-
-    <div class="progress-container">
-      <div class="progress-bar"></div>
+    <div style="position: fixed; top: 10px; right: 10px; z-index: 1001; font-weight: bold;">
+        <a href="index.html" style="color: white; margin-right: 10px;"> English</a>
+        <a href="index-fr.html" style="color: white;"> Français</a>
+        <a href="index-ar.html" style="color: white;">العربية</a>
     </div>
 
-    <div class="button-grid">
-      <div class="flip-card">
-        <a href="cube.html">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/rubik-s-cube-3d-rubik-s-in-lighting-effect_9601771.jpg!bw700" alt="Rubik Cube" class="link-image" />
-            </div>
-            <div class="flip-card-back">Page du cube</div>
-          </div>
-        </a>
-      </div>
 
-      <div class="flip-card">
-        <a href="CSS.html">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/Introduction-To-CSS-1.jpg" alt="Icône CSS" class="link-image" />
-            </div>
-            <div class="flip-card-back">Page CSS</div>
-          </div>
-        </a>
-      </div>
+    <video class="logo-video" autoplay muted loop playsinline>
+        <source src="images/Design sans titre.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la balise vidéo.
+    </video>
 
-      <div class="flip-card">
-        <a href="HTML.html">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/Introduction-to-HTML-2.jpg" alt="Icône HTML" class="link-image" />
-            </div>
-            <div class="flip-card-back">Page HTML</div>
-          </div>
-        </a>
-      </div>
+    <div class="main-content">
+        <h1>Le site de Salman</h1>
 
-      <div class="flip-card">
-        <a href="space.html">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/Science-and-Nature-Planet-Earth (1).jpg" alt="Espace" class="link-image" />
-            </div>
-            <div class="flip-card-back">Page de l'espace</div>
-          </div>
-        </a>
-      </div>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
 
-      <div class="flip-card">
-        <a href="palestine.html">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/abc_871654_007.jpg" alt="Palestine" class="link-image" />
+        <div class="button-grid">
+            <div class="flip-card">
+                <a href="cube-fr.htm">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/rubik-s-cube-3d-rubik-s-in-lighting-effect_9601771.jpg!bw700"
+                                alt="Rubik Cube" class="link-image" />
+                        </div>
+                        <div class="flip-card-back">Page du cube</div>
+                    </div>
+                </a>
             </div>
-            <div class="flip-card-back">Page de la Palestine</div>
-          </div>
-        </a>
-      </div>
 
-      <div class="flip-card">
-        <a href="sea.html">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="Mer" class="link-image" />
+            <div class="flip-card">
+                <a href="css-fr.htm">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/Introduction-To-CSS-1.jpg" alt="Icône CSS" class="link-image" />
+                        </div>
+                        <div class="flip-card-back">Page CSS</div>
+                    </div>
+                </a>
             </div>
-            <div class="flip-card-back">Page de la mer</div>
-          </div>
-        </a>
-      </div>
+
+            <div class="flip-card">
+                <a href="HTML-fr.html">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/Introduction-to-HTML-2.jpg" alt="Icône HTML" class="link-image" />
+                        </div>
+                        <div class="flip-card-back">Page HTML</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="flip-card">
+                <a href="space-fr.htm">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/Science-and-Nature-Planet-Earth (1).jpg" alt="Espace" class="link-image" />
+                        </div>
+                        <div class="flip-card-back">Page de l'espace</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="flip-card">
+                <a href="palestine-fr.htm">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/abc_871654_007.jpg" alt="Palestine" class="link-image" />
+                        </div>
+                        <div class="flip-card-back">Page de la Palestine</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="flip-card">
+                <a href="sea-fr.htm">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="Mer"
+                                class="link-image" />
+                        </div>
+                        <div class="flip-card-back">Page de la mer</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Réalisé par <a href="https://github.com/salmanotmani" target="_blank">Salman</a></p>
+            <p>© 2025 Le site de Salman</p>
+            <p>Mon premier site Web</p>
+        </footer>
     </div>
-
-    <footer>
-      <p>Réalisé par <a href="https://github.com/salmanotmani" target="_blank">Salman</a></p>
-      <p>© 2025 Le site de Salman</p>
-      <p>Mon premier site Web</p>
-    </footer>
-  </div>
 </body>
 
 </html>
-
-  

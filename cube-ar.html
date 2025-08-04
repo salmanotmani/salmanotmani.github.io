@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 
 <head>
-    <title>صفحة CSS ل سلمان</title>
+    <title>صفحة المكعب سلمان</title>
+    <meta charset="UTF-8">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #c8c5d9, #4df650, #01010100);
-            background-image: url('./images/shutterstock_332455154.jpg');
+            background: linear-gradient(to right, #4799db, #7f00ff, #e100ff);
+            background-image: url('./images/rubik-s-cubes-background-falling-multicolored-rubik-s-cubes-over-alpha-channel-rain-of-rubik-s-cubes-across-the-screen-video.jpg');
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
+        /* نفس التنسيقات من النسخة الإنجليزية بدون تغيير */
         .flex-row {
             display: flex;
             justify-content: center;
@@ -60,7 +62,7 @@
 
         ul {
             display: inline-block;
-            text-align: left;
+            text-align: right;
             margin-top: 10px;
         }
 
@@ -68,14 +70,17 @@
             height: 32px;
         }
 
-        .Yes {
-            background-color: rgb(9, 218, 23);
-            color: white;
+        .Yes, .No, .Submit, .Simulator {
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+        }
+
+        .Yes {
+            background-color: rgb(9, 218, 23);
+            color: white;
         }
 
         .Yes:hover {
@@ -85,11 +90,6 @@
         .No {
             background-color: rgb(206, 42, 42);
             color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
         }
 
         .No:hover {
@@ -99,11 +99,6 @@
         .Submit {
             background-color: rgb(255, 255, 1);
             color: black;
-            padding: 10px 10px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
         }
 
         .Submit:hover {
@@ -113,11 +108,6 @@
         .Simulator {
             background-color: rgb(255, 124, 1);
             color: white;
-            padding: 10px 10px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
         }
 
         .Simulator:hover {
@@ -144,16 +134,13 @@
 
         .top-left-button {
             position: fixed;
-            /* دائماً في الأعلى على اليسار */
             top: 15px;
             left: 15px;
             z-index: 999;
-            /* دائماً فوق */
         }
 
         .top-left-button button {
             background: linear-gradient(to right, #00c6ff, #0072ff);
-            /* تدرج أزرق */
             color: white;
             padding: 12px 18px;
             border: none;
@@ -167,7 +154,6 @@
 
         .top-left-button button:hover {
             background: linear-gradient(to right, #ff6a00, #ee0979);
-            /* لون ممتع عند المرور فوق الزر */
             transform: scale(1.05);
         }
 
@@ -181,15 +167,6 @@
             box-shadow: 0 0 20px white;
             transform: scale(1.05);
             transition: 0.3s;
-        }
-
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-            flex-wrap: wrap;
         }
 
         .button-container-row {
@@ -214,7 +191,6 @@
             background-color: #cde7ff;
         }
 
-        /* تقييم النجوم */
         .rating-stars {
             display: flex;
             flex-direction: row-reverse;
@@ -239,7 +215,6 @@
 
         footer {
             margin-top: 20px;
-            text-align: center;
             color: white;
         }
     </style>
@@ -247,99 +222,120 @@
 
 <body>
     <div style="position: fixed; top: 10px; right: 10px;">
-        <a href="css.html" style="color: white; font-weight: bold; color: #000;">English</a> |
-        <a href="css-fr.html" style="color: white; font-weight: bold; color: #000;">Français</a>
-        <a href="css-ar.html" style="color: white; font-weight: bold; color: #000;">العربية</a>
-      </div>
+        <a href="cube.html" style="color: white; font-weight: bold;">English</a> |
+        <a href="cube-fr.htm" style="color: white; font-weight: bold;">Français</a>
+        <a href="cube-ar.html" style="color: white; font-weight: bold;">العربية</a>
+    </div>
 
     <div class="header-banner">
-        صفحة CSS
+        صفحة المكعب
     </div>
 
     <div class="flex-row">
         <div class="image shadow">
             <div class="left-image">
-                <img src="images/css-logo-vector.svg" alt="شعار CSS">
-                <p style="text-align:center; font-weight:bold;">شعار CSS</p>
+                <img src="images/gancube.webp" alt="GAN cube">
+                <p style="text-align:center; font-weight:bold;">GAN Cube</p>
 
-                <img src="images/Introduction-To-CSS-1.jpg" alt="مثال على أنماط CSS">
-                <p style="text-align:center; font-weight:bold;">مقدمة إلى CSS</p>
+                <img src="images/rubiks.webp" alt="Rubik 3x3x3 cube">
+                <p style="text-align:center; font-weight:bold;">Original Rubik's Cube</p>
 
-                <img src="images/css-code-e1517469545230.jpeg" alt="كود CSS">
-                <p style="text-align:center; font-weight:bold;">البرمجة بـ CSS</p>
+                <img src="images/rubiks-cube.gif" alt="Normal 3x3x3 cube">
+                <p style="text-align:center; font-weight:bold;">Normal 3x3x3 cube</p>
 
-                <img src="images/html-css-collage-concept-with-hacker_23-2150061984.avif" alt="مطور ويب يستخدم CSS">
-                <p style="text-align:center; font-weight:bold;">تطوير CSS</p>
+                <img src="images/cube.jpg" alt="Normal 3x3x3 cube">
+                <p style="text-align:center; font-weight:bold;">A 3x3x3 cube</p>
             </div>
         </div>
 
         <div class="right-content shadow">
             <fieldset>
-                <legend>حول CSS</legend>
-                <a href="https://fr.wikipedia.org/wiki/CSS" target="_blank" style="color: yellow;">
-                    المزيد عن CSS
+                <legend>About My Speedcubing</legend>
+                <a href="https://fr.wikipedia.org/wiki/Speedcubing" target="_blank" style="color: yellow;">
+                    Learn more about speedcubing
                 </a>
             </fieldset>
 
-            <marquee>هذه الصفحة تتحدث عن <code>css</code></marquee>
+            <marquee>My cube record is <strong>20 seconds</strong>! 🔥 😎😏</marquee>
 
-            <h4>حقائق عن CSS</h4>
+            <h4>Cool Rubik's Cube Facts</h4>
             <ul>
-                <li>CSS تعني أوراق الأنماط المتتالية.</li>
-                <li>تم إنشاؤه بواسطة هكون ويوم لي.</li>
+                <li>The world record is <strong>3.13 seconds!</strong></li>
+                <li>It was invented by Ernő Rubik in 1974.</li>
             </ul>
 
+
             <details>
-                <summary>اضغط على المثلث لرؤية نصيحة.</summary>
-                بالتدريب تصبح أفضل! حاول تنسيق شيء جديد كل يوم.
+                <summary>Click on the triangle.</summary>
+                Try to do a new record😄!
             </details>
 
-            <h3>🌟 متى بدأت تعلم CSS؟</h3>
-            <input type="date" name="css-start-date">
+            <br>
+            <a href="https://cstimer.net/" target="_blank">
+                <button class="Simulator">🕹️ Try a Cube Simulator</button>
+            </a>
+            <h3>When did you learn cubing?</h3>
+            <input type="date" name="cubing-start">
 
-            <h3>💡 ما هو الشيء المفضل لديك في CSS؟</h3>
-            <textarea rows="4" cols="30" placeholder="اكتب ميزتك المفضلة في CSS!"></textarea>
+            <h3>Any cube tips to share?</h3>
+            <textarea rows="4" cols="30" placeholder="Write your tip here!"></textarea>
 
-            <h3>📚 ما الخاصية المفضلة لديك في CSS؟</h3>
-            <select name="favorite-property" class="cube-dropdown">
-                <option>color</option>
-                <option>background-color</option>
-                <option>font-size</option>
-                <option>margin</option>
-                <option>padding</option>
-                <option>border-radius</option>
+            <h3>Pick your favorite cube color:</h3>
+            <input type="color" name="cube-color">
+
+            <h3>What's your average time between? 🤔</h3>
+            <label><input type="radio" name="Starter" value="Starter"> Starter: 1m-1m30s</label><br>
+            <label><input type="radio" name="advanced" value="advanced"> Advanced: 20s-45s</label><br>
+            <label><input type="radio" name="Expert" value="Expert"> Expert: 3s-20s</label>
+
+            <h3>Do you like playing with your cube? 🤨</h3>
+            <label><input type="checkbox"> Sure</label>
+            <label><input type="checkbox"> A bit</label>
+            <label><input type="checkbox"> No</label>
+
+            <h3>How difficult is solving a cube for you?</h3>
+            <select class="cube-dropdown">
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+                <option>Impossible 😵</option>
             </select>
+            <h3>🔢 How many cubes did you solve today?</h3>
+            <input type="number" min="0" placeholder="Type a number">
 
-            <h3>🧩 هل CSS سهلة بالنسبة لك؟</h3>
-            <select name="css-difficulty" class="cube-dropdown">
-                <option>سهلة جداً</option>
-                <option>سهلة</option>
-                <option>لا بأس بها</option>
-                <option>صعبة</option>
-                <option>ما زلت أتعلم!</option>
+            <h3>What's your cube goal time?</h3>
+            <input type="number" placeholder="(in seconds)">
+
+            <h3>Choose your favorite cube type: </h3>
+            <select class="cube-dropdown">
+                <option>2x2</option>
+                <option>3x3</option>
+                <option>4x4</option>
+                <option>Mirror Cube</option>
+                <option>Pyraminx</option>
+                <option>Megaminx</option>
             </select>
+            <h3>🌍 Cubing Around the World</h3>
+            <p>Check out <a href="https://www.worldcubeassociation.org/competitions" target="_blank"
+                    style="color: yellow;">WCA
+                    Competitions</a>!</p>
 
-            <h3>🔢 كم عدد خصائص CSS التي تعرفها؟</h3>
-            <input type="number" min="0" name="known-properties" placeholder="أدخل رقماً">
 
-            <h3>🚀 هل تريد تعلم المزيد عن CSS؟</h3>
-            <p>شاهد <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" style="color: blue;">دليل CSS من MDN</a> لتعلم البرمجة!</p>
-
-            <h5>هل تحب <em>صفحتي الخاصة بـ CSS؟</em></h5>
+            <h5>Do you <em>like my web page?</em></h5>
             <div class="button-container-row">
-                <button class="Yes" onclick="alert('✅ شكراً!')">نعم</button>
-                <button class="No" onclick="alert('❌ خطأ ❌')">لا</button>
+                <button class="Yes" onclick="alert('✅ Thank you!')">Yes</button>
+                <button class="No" onclick="alert('❌ Error ❌')">No</button>
             </div>
 
             <br><br>
             <form>
                 <div class="large">
-                    <input type="text" name="things" placeholder="أشياء لإضافتها." required style="height: 32px;">
-                    <button class="Submit" type="submit" onclick="alert('حسناً 👍')">إرسال</button>
+                    <input type="text" name="things" placeholder="Things to add." required style="height: 32px;">
+                    <button class="Submit" type="submit" onclick="alert('OK 👍')">Submit</button>
                 </div>
             </form>
 
-            <h3>⭐ قيم صفحتي الخاصة بـ CSS!</h3>
+            <h3>⭐ Rate My Cube Page!</h3>
             <div class="rating-stars">
                 <input type="radio" name="stars" id="star5"><label for="star5">★</label>
                 <input type="radio" name="stars" id="star4"><label for="star4">★</label>
@@ -347,17 +343,19 @@
                 <input type="radio" name="stars" id="star2"><label for="star2">★</label>
                 <input type="radio" name="stars" id="star1"><label for="star1">★</label>
             </div>
+
+
         </div>
     </div>
     <div class="top-left-button">
         <a href="index.html">
-            <button>🔗 الذهاب إلى الصفحة الرئيسية</button>
+            <button>🔗 Go to Home Page</button>
         </a>
     </div>
 
 </body>
 <footer>
-    <p>تم التنفيذ بواسطة <strong><a href="https://github.com/salmanotmani" target="_blank">سلمان</a></strong></p>
+    <p>صنع بواسطة <strong><a href="https://github.com/salmanotmani" target="_blank">سلمان</a></strong></p>
 </footer>
 
 </html>
