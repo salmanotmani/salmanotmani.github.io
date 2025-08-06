@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home Page</title>
+  <title>Home page</title>
   <style>
     body {
       margin: 0;
@@ -19,6 +19,9 @@
       justify-content: center;
       padding-top: 150px;
       box-sizing: border-box;
+      transition: background 0.6s ease;
+      flex-direction: column;
+      align-items: center;
     }
 
     @keyframes gradientFlow {
@@ -52,14 +55,30 @@
       }
     }
 
-    .main-content {
-      width: 90vw;
-      max-width: 1200px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
+    .hover-word span:hover {
+      animation: bounce 0.5s ease;
+      color: yellow;
+    }
+
+    .hover-word span:hover {
+      color: white;
+      text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000;
+      transition: text-shadow 0.3s ease;
+    }
+
+    /* Logo video styles */
     .logo-video {
       position: fixed;
       top: 10px;
@@ -71,10 +90,26 @@
       border: 2px solid white;
       z-index: 1000;
       transition: transform 0.6s ease;
+      cursor: pointer;
     }
 
     .logo-video:hover {
       transform: rotate(360deg);
+    }
+
+    #toggle-bg:checked+label>.logo-video {
+      filter: drop-shadow(0 0 10px yellow);
+      transform: scale(1.1);
+      transition: all 0.5s ease;
+    }
+
+    .main-content {
+      width: 90vw;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 0;
     }
 
     .progress-container {
@@ -99,7 +134,7 @@
     }
 
     .progress-bar::after {
-      content: "100% Complete";
+      content: "100% finished";
       position: absolute;
       right: 220px;
       top: 50%;
@@ -110,31 +145,117 @@
       text-shadow: 0 0 5px black;
     }
 
-    .button-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+    /* Card pile container */
+    .card-pile {
+      position: relative;
       width: 100%;
+      max-width: 900px;
+      height: 540px;
+      cursor: pointer;
+      margin-bottom: 40px;
+      perspective: 1000px;
     }
 
-    .hover-word span {
-      display: inline-block;
-      transition: transform 0.3s ease;
+    /* Cards in pile mode */
+    .pile .flip-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      max-width: 280px;
+      height: 250px;
+      transform: translate(-50%, -50%) rotate(0deg);
+      transition: all 0.8s ease;
+      box-shadow: 0 0 10px white;
+      border-radius: 15px;
+      z-index: 10;
       cursor: pointer;
     }
 
-    .hover-word span:hover {
-      transform: scale(1.5);
-      color: yellow;
-      /* You can change this color if you want! */
+    .pile .flip-card:nth-child(1) {
+      transform: translate(-50%, -50%) rotate(-8deg);
+      z-index: 16;
     }
 
+    .pile .flip-card:nth-child(2) {
+      transform: translate(-50%, -50%) rotate(7deg);
+      z-index: 15;
+    }
 
+    .pile .flip-card:nth-child(3) {
+      transform: translate(-50%, -50%) rotate(12deg);
+      z-index: 14;
+    }
+
+    .pile .flip-card:nth-child(4) {
+      transform: translate(-50%, -50%) rotate(-6deg);
+      z-index: 13;
+    }
+
+    .pile .flip-card:nth-child(5) {
+      transform: translate(-50%, -50%) rotate(5deg);
+      z-index: 12;
+    }
+
+    .pile .flip-card:nth-child(6) {
+      transform: translate(-50%, -50%) rotate(-10deg);
+      z-index: 11;
+    }
+
+    /* Spread mode */
+    .spread .flip-card {
+      position: absolute;
+      width: 100%;
+      max-width: 280px;
+      height: 250px;
+      transition: all 0.8s ease;
+      box-shadow: 0 0 10px white;
+      border-radius: 15px;
+      z-index: 10;
+      transform-origin: center center;
+      cursor: pointer;
+    }
+
+    .spread .flip-card:nth-child(1) {
+      top: 0%;
+      left: 0%;
+      transform: translate(0, 0) rotate(0deg);
+    }
+
+    .spread .flip-card:nth-child(2) {
+      top: 0%;
+      left: 33.33%;
+      transform: translate(0, 0) rotate(0deg);
+    }
+
+    .spread .flip-card:nth-child(3) {
+      top: 0%;
+      left: 66.66%;
+      transform: translate(0, 0) rotate(0deg);
+    }
+
+    .spread .flip-card:nth-child(4) {
+      top: 50%;
+      left: 0%;
+      transform: translate(0, 0) rotate(0deg);
+    }
+
+    .spread .flip-card:nth-child(5) {
+      top: 50%;
+      left: 33.33%;
+      transform: translate(0, 0) rotate(0deg);
+    }
+
+    .spread .flip-card:nth-child(6) {
+      top: 50%;
+      left: 66.66%;
+      transform: translate(0, 0) rotate(0deg);
+    }
+
+    /* Flip cards */
     .flip-card {
       perspective: 1000px;
       border-radius: 15px;
-      width: 100%;
-      height: 250px;
     }
 
     .flip-card-inner {
@@ -146,10 +267,17 @@
       transform-style: preserve-3d;
       border-radius: 15px;
       box-shadow: 0 0 10px white;
+      user-select: none;
     }
 
-    .flip-card:hover .flip-card-inner {
+    .pile .flip-card-inner:hover {
+      transform: none !important;
+      cursor: pointer;
+    }
+
+    .spread .flip-card:hover .flip-card-inner {
       transform: rotateY(180deg);
+      cursor: pointer;
     }
 
     .flip-card-front,
@@ -187,7 +315,7 @@
     }
 
     footer {
-      margin-top: 60px;
+      margin-top: 59px;
       border-top: 4px solid white;
       background-color: rgba(0, 0, 0, 0.6);
       color: white;
@@ -207,134 +335,202 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 900px) {
-      .button-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .flip-card,
-      .flip-card-inner,
-      .flip-card-front,
-      .flip-card-back,
-      .flip-card-front img.link-image {
-        height: 200px;
-      }
+    /* Settings Button */
+    .settings-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #333;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 2000;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 28px;
-      }
+    .settings-menu {
+      display: none;
+      position: fixed;
+      top: 50px;
+      right: 10px;
+      background: white;
+      color: black;
+      border-radius: 10px;
+      box-shadow: 0 0 10px black;
+      padding: 10px;
+      z-index: 2000;
+      width: 200px;
+    }
 
-      .button-grid {
-        grid-template-columns: 1fr;
-      }
+    .settings-menu a,
+    .settings-menu button {
+      display: block;
+      margin: 5px 0;
+      text-decoration: none;
+      color: black;
+      background: #eee;
+      padding: 8px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+    }
 
-      .flip-card,
-      .flip-card-inner,
-      .flip-card-front,
-      .flip-card-back,
-      .flip-card-front img.link-image {
-        width: 90vw;
-      }
+    .settings-menu a:hover,
+    .settings-menu button:hover {
+      background: #ccc;
+    }
+
+    /* Spread toggle button */
+    #toggleSpreadBtn {
+      background-color: #7f00ff;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-bottom: 40px;
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+
+    #toggleSpreadBtn:hover {
+      background-color: #a34dff;
+    }
+
+    /* Shuffle button */
+    #shuffleBtn {
+      background-color: #00cc66;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-bottom: 40px;
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+
+    #shuffleBtn:hover {
+      background-color: #33e680;
+    }
+
+    #toggleSpreadBtn,
+    #shuffleBtn {
+      display: none;
+      /* Hide buttons at first */
     }
   </style>
 </head>
 
+
+
 <body>
-  <div style="position: fixed; top: 10px; right: 10px; z-index: 1001; font-weight: bold;">
-    <a href="index.html" style="color: white; margin-right: 10px;"> English</a>
-    <a href="index-fr.html" style="color: white;"> Français</a>
-    <a href="index-ar.html" style="color: white;">العربية</a>
+  <div class="settings-menu" id="settingsMenu">
+    <strong>Language</strong>
+    <a href="index.html">English</a>
+    <a href="index-fr.html">Français</a>
+    <a href="index-ar.html">العربية</a>
+    <hr>
+    <strong>Backgroud color</strong>
+    <button onclick="setTheme('gradient')">gradient colors</button>
+    <button onclick="setTheme('dark')">dark mode</button>
+    <button onclick="setTheme('light')">light mode</button>
   </div>
 
+  <!-- Hidden checkbox for toggling background -->
+  <input type="checkbox" id="toggle-bg" style="display:none;">
 
+  <!-- Logo -->
+  <label for="toggle-bg">
+    <video class="logo-video" autoplay muted loop playsinline>
+      <source src="images/Design sans titre.mp4" type="video/mp4" />
+      متصفحك لا يدعم تشغيل الفيديو.
+    </video>
+  </label>
 
+  <!-- Settings Button -->
+  <div class="settings-btn" onclick="toggleSettings()">⚙ Settings</div>
 
-
-  <video class="logo-video" autoplay muted loop playsinline>
-    <source src="images/Design sans titre.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+  <!-- Settings Menu -->
 
   <div class="main-content">
     <h1 class="hover-word">
       <span>S</span><span>a</span><span>l</span><span>m</span><span>a</span><span>n</span><span>'</span><span>s</span>
       &nbsp;
-      <span>W</span><span>e</span><span>b</span><span>s</span><span>i</span><span>t</span><span>e</span>
+      <span>W</span><span>e</span><span>b</span>
+      &nbsp;
+      <span>s</span><span>i</span><span>t</span><span>e</span>
     </h1>
 
     <div class="progress-container">
       <div class="progress-bar"></div>
     </div>
 
-    <div class="button-grid">
-      <div class="flip-card">
-        <a href="cube.html">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/rubik-s-cube-3d-rubik-s-in-lighting-effect_9601771.jpg!bw700" alt="Rubik Cube"
-                class="link-image" />
-            </div>
-            <div class="flip-card-back">Cube Page</div>
-          </div>
-        </a>
-      </div>
+    <button id="toggleSpreadBtn">Back to pile</button>
+    <button id="shuffleBtn">Shuffle cards</button>
 
-      <div class="flip-card">
-        <a href="CSS.html">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/Introduction-To-CSS-1.jpg" alt="CSS icon" class="link-image" />
-            </div>
-            <div class="flip-card-back">CSS Page</div>
+    <!-- Card pile container -->
+    <div class="card-pile pile" id="cardPile">
+      <!-- Your flip cards with links -->
+      <a href="cube.html" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/rubik-s-cube-3d-rubik-s-in-lighting-effect_9601771.jpg!bw700" alt="Rubik Cube"
+              class="link-image" />
           </div>
-        </a>
-      </div>
+          <div class="flip-card-back">Cube Page</div>
+        </div>
+      </a>
 
-      <div class="flip-card">
-        <a href="HTML.html">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/Introduction-to-HTML-2.jpg" alt="HTML icon" class="link-image" />
-            </div>
-            <div class="flip-card-back">HTML Page</div>
+      <a href="CSS.html" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/Introduction-To-CSS-1.jpg" alt="CSS icon" class="link-image" />
           </div>
-        </a>
-      </div>
+          <div class="flip-card-back">CSS Page</div>
+        </div>
+      </a>
 
-      <div class="flip-card">
-        <a href="space.html">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/Science-and-Nature-Planet-Earth (1).jpg" alt="Space" class="link-image" />
-            </div>
-            <div class="flip-card-back">Space Page</div>
+      <a href="HTML.html" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/Introduction-to-HTML-2.jpg" alt="HTML icon" class="link-image" />
           </div>
-        </a>
-      </div>
+          <div class="flip-card-back">HTML Page</div>
+        </div>
+      </a>
 
-      <div class="flip-card">
-        <a href="palestine.html">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/abc_871654_007.jpg" alt="Palestine" class="link-image" />
-            </div>
-            <div class="flip-card-back">Palestine Page</div>
+      <a href="space.html" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/Science-and-Nature-Planet-Earth (1).jpg" alt="Space" class="link-image" />
           </div>
-        </a>
-      </div>
+          <div class="flip-card-back">Space Page</div>
+        </div>
+      </a>
 
-      <div class="flip-card">
-        <a href="sea.html">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="Sea" class="link-image" />
-            </div>
-            <div class="flip-card-back">Sea Page</div>
+      <a href="palestine.html" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/abc_871654_007.jpg" alt="Palestine" class="link-image" />
           </div>
-        </a>
-      </div>
+          <div class="flip-card-back">Palestine Page</div>
+        </div>
+      </a>
+
+      <a href="sea.html" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="images/360_F_191396776_4Su8tbZmVwSlfDBLDWQ5267fSWOpk0Xe.jpg" alt="Sea" class="link-image" />
+          </div>
+          <div class="flip-card-back">Sea Page</div>
+        </div>
+      </a>
     </div>
 
     <footer>
@@ -343,6 +539,123 @@
       <p>My first Website</p>
     </footer>
   </div>
+
+  <script>
+    const cardPile = document.getElementById("cardPile");
+    const toggleBtn = document.getElementById("toggleSpreadBtn");
+    const shuffleBtn = document.getElementById("shuffleBtn");
+
+    // Start in pile mode
+    let isSpread = false;
+
+    // Fixed grid positions for spread mode (top and left %)
+    const gridPositions = [
+      { top: "0%", left: "0%" },
+      { top: "0%", left: "33.33%" },
+      { top: "0%", left: "66.66%" },
+      { top: "50%", left: "0%" },
+      { top: "50%", left: "33.33%" },
+      { top: "50%", left: "66.66%" }
+    ];
+
+    // When any card is clicked and cards are in pile mode
+    cardPile.querySelectorAll(".flip-card").forEach(card => {
+      card.addEventListener("click", (e) => {
+        if (!isSpread) {
+          e.preventDefault(); // Prevent link navigation when spreading cards
+          spreadCards();
+        }
+      });
+    });
+
+    toggleBtn.addEventListener("click", () => {
+      foldCards();
+    });
+    toggleBtn.addEventListener("click", foldCards);
+
+
+    shuffleBtn.addEventListener("click", () => {
+      shuffleCards();
+
+    });
+
+    function spreadCards() {
+      cardPile.classList.remove("pile");
+      cardPile.classList.add("spread");
+      isSpread = true;
+      toggleBtn.style.display = "inline-block";
+      shuffleBtn.style.display = "inline-block";
+      resetCardPositions(); // Make sure cards start in the original grid positions
+    }
+
+    function foldCards() {
+      cardPile.classList.remove("spread");
+      cardPile.classList.add("pile");
+      isSpread = false;
+      toggleBtn.style.display = "none";
+      shuffleBtn.style.display = "none";
+
+      // Remove inline styles so CSS pile styles take effect
+      const cards = cardPile.querySelectorAll(".flip-card");
+      cards.forEach(card => {
+        card.style.top = '';
+        card.style.left = '';
+        card.style.transform = '';
+        card.style.transition = '';
+      });
+    }
+
+
+    // Reset cards to original grid positions in spread mode
+    function resetCardPositions() {
+      const cards = cardPile.querySelectorAll(".flip-card");
+      cards.forEach((card, index) => {
+        const pos = gridPositions[index];
+        card.style.top = pos.top;
+        card.style.left = pos.left;
+        card.style.transform = "translate(0, 0) rotate(0deg)";
+        card.style.transition = "all 0.8s ease";
+      });
+    }
+
+    // Shuffle card positions randomly in spread mode
+    function shuffleCards() {
+      const cards = Array.from(cardPile.querySelectorAll(".flip-card"));
+      let positions = [...gridPositions];
+
+      // Shuffle the positions array
+      for (let i = positions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [positions[i], positions[j]] = [positions[j], positions[i]];
+      }
+
+      // Assign shuffled positions to cards
+      cards.forEach((card, index) => {
+        const pos = positions[index];
+        card.style.top = pos.top;
+        card.style.left = pos.left;
+        card.style.transform = "translate(0, 0) rotate(0deg)";
+        card.style.transition = "all 0.8s ease";
+      });
+
+    }
+    function toggleSettings() {
+      const menu = document.getElementById("settingsMenu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    function setTheme(theme) {
+      if (theme === "dark") {
+        document.body.style.background = "#000";
+      } else if (theme === "light") {
+        document.body.style.background = "#fff";
+      } else {
+        document.body.style.background = "linear-gradient(-45deg, #000000, #7f00ff, #00bfff, #008000, #ff0000, #ff9900, #264de4, #000000)";
+        document.body.style.backgroundSize = "500% 500%";
+        document.body.style.animation = "gradientFlow 20s ease infinite";
+      }
+    }
+  </script>
 </body>
 
 </html>
