@@ -2,8 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
-    <title>صفحة المكعب سلمان</title>
-    <meta charset="UTF-8">
+    <title>صفحة المكعب</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +13,6 @@
             align-items: center;
         }
 
-        /* نفس التنسيقات من النسخة الإنجليزية بدون تغيير */
         .flex-row {
             display: flex;
             justify-content: center;
@@ -70,17 +68,14 @@
             height: 32px;
         }
 
-        .Yes, .No, .Submit, .Simulator {
+        .Yes {
+            background-color: rgb(9, 218, 23);
+            color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-        }
-
-        .Yes {
-            background-color: rgb(9, 218, 23);
-            color: white;
         }
 
         .Yes:hover {
@@ -90,6 +85,11 @@
         .No {
             background-color: rgb(206, 42, 42);
             color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
         }
 
         .No:hover {
@@ -99,6 +99,11 @@
         .Submit {
             background-color: rgb(255, 255, 1);
             color: black;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
         }
 
         .Submit:hover {
@@ -108,6 +113,11 @@
         .Simulator {
             background-color: rgb(255, 124, 1);
             color: white;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
         }
 
         .Simulator:hover {
@@ -167,6 +177,15 @@
             box-shadow: 0 0 20px white;
             transform: scale(1.05);
             transition: 0.3s;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
         }
 
         .button-container-row {
@@ -234,108 +253,105 @@
     <div class="flex-row">
         <div class="image shadow">
             <div class="left-image">
-                <img src="images/gancube.webp" alt="GAN cube">
-                <p style="text-align:center; font-weight:bold;">GAN Cube</p>
+                <img src="images/gancube.webp" alt="مكعب GAN">
+                <p style="text-align:center; font-weight:bold;">مكعب GAN</p>
 
-                <img src="images/rubiks.webp" alt="Rubik 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">Original Rubik's Cube</p>
+                <img src="images/rubiks.webp" alt="مكعب روبيك الأصلي 3x3x3">
+                <p style="text-align:center; font-weight:bold;">مكعب روبيك الأصلي</p>
 
-                <img src="images/rubiks-cube.gif" alt="Normal 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">Normal 3x3x3 cube</p>
+                <img src="images/rubiks-cube.gif" alt="مكعب عادي 3x3x3">
+                <p style="text-align:center; font-weight:bold;">مكعب عادي 3x3x3</p>
 
-                <img src="images/cube.jpg" alt="Normal 3x3x3 cube">
-                <p style="text-align:center; font-weight:bold;">A 3x3x3 cube</p>
+                <img src="images/cube.jpg" alt="مكعب عادي 3x3x3">
+                <p style="text-align:center; font-weight:bold;">مكعب 3x3x3</p>
             </div>
         </div>
 
         <div class="right-content shadow">
             <fieldset>
-                <legend>About My Speedcubing</legend>
-                <a href="https://fr.wikipedia.org/wiki/Speedcubing" target="_blank" style="color: yellow;">
-                    Learn more about speedcubing
+                <legend>عن حل المكعب السريع</legend>
+                <a href="https://ar.wikipedia.org/wiki/سبيد_كيوبينغ" target="_blank" style="color: yellow;">
+                    تعرف أكثر على حل المكعب السريع
                 </a>
             </fieldset>
 
-            <marquee>My cube record is <strong>20 seconds</strong>! 🔥 😎😏</marquee>
+            <marquee>رقمي القياسي في المكعب هو <strong>20 ثانية</strong>! 🔥 😎😏</marquee>
 
-            <h4>Cool Rubik's Cube Facts</h4>
+            <h4>حقائق رائعة عن مكعب روبيك</h4>
             <ul>
-                <li>The world record is <strong>3.13 seconds!</strong></li>
-                <li>It was invented by Ernő Rubik in 1974.</li>
+                <li>الرقم القياسي العالمي هو <strong>3.13 ثانية!</strong></li>
+                <li>اخترعه إرنو روبيك عام 1974.</li>
             </ul>
 
-
             <details>
-                <summary>Click on the triangle.</summary>
-                Try to do a new record😄!
+                <summary>اضغط على السهم.</summary>
+                حاول أن تحقق رقماً قياسياً جديداً 😄!
             </details>
 
             <br>
             <a href="https://cstimer.net/" target="_blank">
-                <button class="Simulator">🕹️ Try a Cube Simulator</button>
+                <button class="Simulator">🕹️ جرّب محاكي المكعب</button>
             </a>
-            <h3>When did you learn cubing?</h3>
+            <h3>متى تعلمت حل المكعب؟</h3>
             <input type="date" name="cubing-start">
 
-            <h3>Any cube tips to share?</h3>
-            <textarea rows="4" cols="30" placeholder="Write your tip here!"></textarea>
+            <h3>هل لديك نصائح عن المكعب؟</h3>
+            <textarea rows="4" cols="30" placeholder="اكتب نصيحتك هنا!"></textarea>
 
-            <h3>Pick your favorite cube color:</h3>
+            <h3>اختر لونك المفضل للمكعب:</h3>
             <input type="color" name="cube-color">
 
-            <h3>What's your average time between? 🤔</h3>
-            <label><input type="radio" name="Starter" value="Starter"> Starter: 1m-1m30s</label><br>
-            <label><input type="radio" name="advanced" value="advanced"> Advanced: 20s-45s</label><br>
-            <label><input type="radio" name="Expert" value="Expert"> Expert: 3s-20s</label>
+            <h3>ما هو متوسط وقتك؟ 🤔</h3>
+            <label><input type="radio" name="Starter" value="Starter"> مبتدئ: دقيقة - دقيقة ونصف</label><br>
+            <label><input type="radio" name="advanced" value="advanced"> متقدم: 20 - 45 ثانية</label><br>
+            <label><input type="radio" name="Expert" value="Expert"> خبير: 3 - 20 ثانية</label>
 
-            <h3>Do you like playing with your cube? 🤨</h3>
-            <label><input type="checkbox"> Sure</label>
-            <label><input type="checkbox"> A bit</label>
-            <label><input type="checkbox"> No</label>
+            <h3>هل تحب اللعب بالمكعب؟ 🤨</h3>
+            <label><input type="checkbox"> نعم</label>
+            <label><input type="checkbox"> قليلاً</label>
+            <label><input type="checkbox"> لا</label>
 
-            <h3>How difficult is solving a cube for you?</h3>
+            <h3>ما مدى صعوبة حل المكعب بالنسبة لك؟</h3>
             <select class="cube-dropdown">
-                <option>Easy</option>
-                <option>Medium</option>
-                <option>Hard</option>
-                <option>Impossible 😵</option>
+                <option>سهل</option>
+                <option>متوسط</option>
+                <option>صعب</option>
+                <option>مستحيل 😵</option>
             </select>
-            <h3>🔢 How many cubes did you solve today?</h3>
-            <input type="number" min="0" placeholder="Type a number">
+            <h3>🔢 كم مكعب حللت اليوم؟</h3>
+            <input type="number" min="0" placeholder="أدخل رقماً">
 
-            <h3>What's your cube goal time?</h3>
-            <input type="number" placeholder="(in seconds)">
+            <h3>ما هو وقتك المستهدف لحل المكعب؟</h3>
+            <input type="number" placeholder="(بالثواني)">
 
-            <h3>Choose your favorite cube type: </h3>
+            <h3>اختر نوع المكعب المفضل لديك: </h3>
             <select class="cube-dropdown">
                 <option>2x2</option>
                 <option>3x3</option>
                 <option>4x4</option>
-                <option>Mirror Cube</option>
-                <option>Pyraminx</option>
-                <option>Megaminx</option>
+                <option>مكعب المرايا</option>
+                <option>بيرامينكس</option>
+                <option>ميجامينكس</option>
             </select>
-            <h3>🌍 Cubing Around the World</h3>
-            <p>Check out <a href="https://www.worldcubeassociation.org/competitions" target="_blank"
-                    style="color: yellow;">WCA
-                    Competitions</a>!</p>
+            <h3>🌍 المكعب حول العالم</h3>
+            <p>اطلع على <a href="https://www.worldcubeassociation.org/competitions" target="_blank"
+                    style="color: yellow;">بطولات WCA</a>!</p>
 
-
-            <h5>Do you <em>like my web page?</em></h5>
+            <h5>هل <em>أعجبتك صفحتي؟</em></h5>
             <div class="button-container-row">
-                <button class="Yes" onclick="alert('✅ Thank you!')">Yes</button>
-                <button class="No" onclick="alert('❌ Error ❌')">No</button>
+                <button class="Yes" onclick="alert('✅ شكراً لك!')">نعم</button>
+                <button class="No" onclick="alert('❌ خطأ ❌')">لا</button>
             </div>
 
             <br><br>
             <form>
                 <div class="large">
-                    <input type="text" name="things" placeholder="Things to add." required style="height: 32px;">
-                    <button class="Submit" type="submit" onclick="alert('OK 👍')">Submit</button>
+                    <input type="text" name="things" placeholder="أشياء لإضافتها" required style="height: 32px;">
+                    <button class="Submit" type="submit" onclick="alert('👍 تم')">إرسال</button>
                 </div>
             </form>
 
-            <h3>⭐ Rate My Cube Page!</h3>
+            <h3>⭐ قيم صفحة المكعب!</h3>
             <div class="rating-stars">
                 <input type="radio" name="stars" id="star5"><label for="star5">★</label>
                 <input type="radio" name="stars" id="star4"><label for="star4">★</label>
@@ -343,13 +359,12 @@
                 <input type="radio" name="stars" id="star2"><label for="star2">★</label>
                 <input type="radio" name="stars" id="star1"><label for="star1">★</label>
             </div>
-
-
         </div>
     </div>
+
     <div class="top-left-button">
         <a href="index.html">
-            <button>انتقل إلى الصفحة الرئيسية🔗</button>
+            <button>🔗 العودة للصفحة الرئيسية</button>
         </a>
     </div>
 
