@@ -418,6 +418,21 @@
 #shuffleBtn {
   display: none; /* Hide buttons at first */
 }
+.trail {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: trailFade 0.5s forwards;
+}
+
+@keyframes trailFade {
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
 
   </style>
 </head>
@@ -645,6 +660,21 @@ function setTheme(theme) {
     document.body.style.animation = "gradientFlow 20s ease infinite";
   }
 }
+// Rainbow Trail Effect
+const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+let colorIndex = 0;
+
+document.addEventListener("mousemove", (e) => {
+  const trail = document.createElement("div");
+  trail.className = "trail";
+  trail.style.left = `${e.pageX}px`;
+  trail.style.top = `${e.pageY}px`;
+  trail.style.backgroundColor = colors[colorIndex];
+  colorIndex = (colorIndex + 1) % colors.length;
+
+  document.body.appendChild(trail);
+  setTimeout(() => trail.remove(), 500);
+});
 
   </script>
 </body>
