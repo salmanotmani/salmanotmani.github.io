@@ -441,6 +441,30 @@
     transform: scale(0.5);
   }
 }
+button {
+      padding: 12px 20px;
+      font-size: 18px;
+      background: #ff9800;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    button:hover {
+      background: #e68900;
+    }
+
+    /* This class will do the barrel roll */
+    .barrel-roll {
+      animation: roll 2s linear;
+    }
+
+    @keyframes roll {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
 
   </style>
 </head>
@@ -488,6 +512,9 @@
     <div class="progress-container">
       <div class="progress-bar"></div>
     </div>
+    <button id="rollBtn">Do a Barrel Roll</button>
+    <br></br>
+
 
     <button id="toggleSpreadBtn">Back to pile</button>
     <button id="shuffleBtn">Shuffle cards</button>
@@ -689,6 +716,39 @@ document.addEventListener("mousemove", (e) => {
   setTimeout(() => trail.remove(), 500);
 });
 
+const btn = document.getElementById('rollBtn');
+
+    btn.addEventListener('click', () => {
+      document.body.classList.add('barrel-roll');
+
+      // Remove the class after animation so it can be done again
+      setTimeout(() => {
+        document.body.classList.remove('barrel-roll');
+      }, 2000);
+    });
+    // List of possible gradient backgrounds
+const gradients = [
+  "linear-gradient(to right, #ff5733, #ffbd33)",
+  "linear-gradient(to right, #33ff57, #33fff3)",
+  "linear-gradient(to right, #3357ff, #9b33ff)",
+  "linear-gradient(to right, #f1c40f, #e67e22)",
+  "linear-gradient(to right, #9b59b6, #ff33a6)",
+  "linear-gradient(to right, #00ffff, #008080)"
+];
+
+document.getElementById("rollBtn").addEventListener("click", () => {
+  document.body.classList.add("barrel-roll");
+
+  // Pick a random gradient
+  const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
+  document.body.style.background = randomGradient;
+
+  setTimeout(() => {
+    document.body.classList.remove("barrel-roll");
+  }, 2000);
+});
+
+    
   </script>
 </body>
 
